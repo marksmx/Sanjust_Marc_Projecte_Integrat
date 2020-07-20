@@ -70,6 +70,7 @@ public class Principal {
 	JButton btnAfegirClient = new JButton("AFEGIR CLIENT");
 	JButton btnAfegirProducteservei = new JButton("CREAR PRODUCTE/SERVEI");
 	JButton btnEinesDadmin = new JButton("ELIMINAR CLIENTS");
+	JButton btnConsultarComandesPendents = new JButton("");
 
 	
 	/** FUNCIÓ PER A CRIDAR A LA FUNCIÓ QUE COMPOSA ELS ELEMENTS DE LA PANTALLA I A LES FUNCIONS DE CONSTRUCCIÓ DE LA TAULA */
@@ -200,6 +201,7 @@ public class Principal {
 		frame.getContentPane().setLayout(null);
         frame.setTitle("OnTime Agency App - v.2.0");
 		
+        
 		/** Inici del conjunt d'elements que composen la capçalera */
 		
         
@@ -242,6 +244,91 @@ public class Principal {
 				
 			}
 		});
+		
+		
+		btnConsultarComandesPendents.setForeground(Color.BLACK);
+		btnConsultarComandesPendents.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				
+				btnConsultarComandesPendents.setBackground(Color.BLACK);
+				btnConsultarComandesPendents.setForeground(Color.WHITE);
+				btnConsultarComandesPendents.setIcon(new ImageIcon(Principal.class.getResource("/VISTA/img/be_w.png")));
+
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				
+				btnConsultarComandesPendents.setBackground(Color.WHITE);
+				btnConsultarComandesPendents.setForeground(Color.BLACK);
+				btnConsultarComandesPendents.setIcon(new ImageIcon(Principal.class.getResource("/VISTA/img/be.png")));
+
+			}
+			
+		});
+		
+		btnConsultarComandesPendents.setIcon(new ImageIcon(Principal.class.getResource("/VISTA/img/be.png")));
+		btnConsultarComandesPendents.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				
+			    /** Inici conjunt de codi notificació de tasca pendent */
+		        
+		        try {
+		        	
+		        	
+		        	for(int z=0; z<4; z++) {
+		        		
+			        	int recompteComPen = 0;
+		             	ArrayList<String> miLista = sqlC.consultarDataLimit(Integer.toString(z));
+		        		String matInfo[] = new String[miLista.size()];
+		        		
+		        		for (int i = 0; i < miLista.size(); i++) {
+		        			
+		        			String test = ""+miLista.get(i).charAt(0)+miLista.get(i).charAt(1)+miLista.get(i).charAt(2);
+		        			
+		        			if(test.equals("Sen")) {
+		        				
+		        				
+		        			} else {
+		        				
+		        				++recompteComPen;
+		        				
+		        			}
+		        			
+		        		}
+		        		
+		       			if(recompteComPen>0) {
+	        				
+	        				JOptionPane.showMessageDialog(null, "Tens " + recompteComPen + " Comandes Pendents de " + sqlCl.consultarNomClient(Integer.toString(z)),"", JOptionPane.INFORMATION_MESSAGE);
+
+	        			}
+		        		
+		        	}
+		   
+		    		
+				} catch (Exception e) {
+					
+					System.out.println("ERROR");
+					
+				}
+		    
+		        
+		        /** Fi conjunt de codi notificació de tasca pendent */
+		        
+			}
+		});
+		
+		btnConsultarComandesPendents.setToolTipText("Consultar Comandes Pendents\r\n");
+		btnConsultarComandesPendents.setForeground(Color.BLACK);
+		btnConsultarComandesPendents.setFont(new Font("HelveticaNeue", Font.BOLD, 10));
+		btnConsultarComandesPendents.setFocusPainted(false);
+		btnConsultarComandesPendents.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
+		btnConsultarComandesPendents.setBackground(Color.WHITE);
+		btnConsultarComandesPendents.setBounds(80, 297, 45, 44);
+		frame.getContentPane().add(btnConsultarComandesPendents);
 		btnModificarContrasenya.setForeground(Color.BLACK);
 		btnModificarContrasenya.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		btnModificarContrasenya.setFocusPainted(false);
@@ -643,7 +730,7 @@ public class Principal {
 		scrollPane_1.setFont(new Font("HelveticaNeue", Font.BOLD, 11));
 		scrollPane_1.setBorder(null);
 		scrollPane_1.setBackground(Color.BLACK);
-		scrollPane_1.setBounds(32, 315, 137, 133);
+		scrollPane_1.setBounds(32, 341, 137, 133);
 		frame.getContentPane().add(scrollPane_1);
 		scrollPane_1.setViewportView(table_2);
 		

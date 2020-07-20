@@ -111,7 +111,6 @@ public class SQLComandes {
 			
 			while (rs.next()) {
 				
-				String test = rs.getString("estatComanda");
 				com = new ComandaCl(rs.getString("estatComanda"), rs.getString("numComanda"), rs.getString("idProducte"), rs.getString("data"), rs.getString("hores"), rs.getString("total"), rs.getString("idEmpresa"),rs.getString("pagat"), rs.getString("dataLimit"), rs.getString("descripcio"));
 				miLista.add(com);
 				
@@ -130,6 +129,43 @@ public class SQLComandes {
 		return miLista;
 		
 	}
+	
+	/** FUNCIO PER A CONSULTAR LA DATA LÍMIT D'UNA COMANDA EXISTENT */
+
+	public ArrayList<String> consultarDataLimit(String idEmpresa) throws SQLException {
+
+		conectar();
+		ArrayList<String> miLista = new ArrayList<String>();
+		String com = null;
+		sentencia = c.createStatement();
+		String consultaSql = "SELECT dataLimit FROM comanda WHERE idEmpresa = '"+idEmpresa+"';";
+		System.out.println(consultaSql);
+		
+		try {
+			
+			ResultSet rs = sentencia.executeQuery(consultaSql);
+
+			while (rs.next()) {
+				
+				com = rs.getString("dataLimit");
+				miLista.add(com);
+				
+			}
+			
+			rs.close();
+			sentencia.close();
+			c.close();
+			
+		} catch (Exception e) {
+			System.out.println("No");
+			System.out.println("ERROR");
+			
+		}
+		
+		return miLista;
+		
+	}
+	
 	
 	
 	/** FUNCIO PER A ELIMINAR UNA COMANDA EXISTENT */

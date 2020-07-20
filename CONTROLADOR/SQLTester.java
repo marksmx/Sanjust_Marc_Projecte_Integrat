@@ -2,6 +2,8 @@ package CONTROLADOR;
 
 import java.awt.Image;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import DADES.*;
 import MODEL.ComandaCl;
 
@@ -15,6 +17,26 @@ public class SQLTester {
 		SQLComandes sqlCo = new SQLComandes();
 		SQLProductes sqlP = new SQLProductes();
 		sqlC.conectar();
+		
+		ArrayList<String> miLista = sqlCo.consultarDataLimit("0");
+		String matInfo[] = new String[miLista.size()];
+
+		for (int i = 0; i < miLista.size(); i++) {
+			
+			String test = ""+miLista.get(i).charAt(0)+miLista.get(i).charAt(1)+miLista.get(i).charAt(2);
+			
+			if(test.equals("Sen")) {
+				
+				System.out.println("Nada");
+				
+			} else {
+				
+				System.out.println("Ieep");
+				
+			}
+			
+		}
+		
 		//sqlU.modificarUsuari("hola", "hola", "hola", "dew", "hola");
 
 		//sqlU.exist();
