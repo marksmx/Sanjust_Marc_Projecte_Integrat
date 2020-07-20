@@ -138,7 +138,7 @@ public class SQLComandes {
 		ArrayList<String> miLista = new ArrayList<String>();
 		String com = null;
 		sentencia = c.createStatement();
-		String consultaSql = "SELECT dataLimit FROM comanda WHERE idEmpresa = '"+idEmpresa+"';";
+		String consultaSql = "SELECT dataLimit FROM comanda WHERE idEmpresa = '"+idEmpresa+"' AND estatComanda = 'p';";
 		System.out.println(consultaSql);
 		
 		try {

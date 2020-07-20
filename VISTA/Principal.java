@@ -57,8 +57,9 @@ public class Principal {
 	private int perEP = 0;
 	private int perP = 0;
 	private boolean isSelected = false;
+	private String test = "";
+	private String dLimit = "";
 
-	
 	/** DECLARACIÓ DEL JFRAME, DE BOTONS, DE CAMPS DE TEXT I ALTRES */
 
 	public JFrame frame;
@@ -279,7 +280,7 @@ public class Principal {
 		        try {
 		        	
 		        	
-		        	for(int z=0; z<4; z++) {
+		        	for(int z=0; z<99; z++) {
 		        		
 			        	int recompteComPen = 0;
 		             	ArrayList<String> miLista = sqlC.consultarDataLimit(Integer.toString(z));
@@ -287,13 +288,18 @@ public class Principal {
 		        		
 		        		for (int i = 0; i < miLista.size(); i++) {
 		        			
-		        			String test = ""+miLista.get(i).charAt(0)+miLista.get(i).charAt(1)+miLista.get(i).charAt(2);
+		        			test = ""+miLista.get(i).charAt(0)+miLista.get(i).charAt(1)+miLista.get(i).charAt(2);
 		        			
 		        			if(test.equals("Sen")) {
 		        				
 		        				
 		        			} else {
 		        				
+		        				dLimit = ""+miLista.get(i).charAt(0)+miLista.get(i).charAt(1)+miLista.get(i).charAt(2)+
+		        						miLista.get(i).charAt(3)+miLista.get(i).charAt(4)+miLista.get(i).charAt(5)+
+		        						miLista.get(i).charAt(6)+miLista.get(i).charAt(7)+miLista.get(i).charAt(8)+
+		        						miLista.get(i).charAt(9)+miLista.get(i).charAt(10);
+		        				System.out.println(dLimit);
 		        				++recompteComPen;
 		        				
 		        			}
@@ -302,10 +308,10 @@ public class Principal {
 		        		
 		       			if(recompteComPen>0) {
 	        				
-	        				JOptionPane.showMessageDialog(null, "Tens " + recompteComPen + " Comandes Pendents de " + sqlCl.consultarNomClient(Integer.toString(z)),"", JOptionPane.INFORMATION_MESSAGE);
+	        				JOptionPane.showMessageDialog(null, "Tens " + recompteComPen + " Comandes Pendents de " + sqlCl.consultarNomClient(Integer.toString(z)) + " per el dia " + dLimit,"", JOptionPane.INFORMATION_MESSAGE);
 
-	        			}
-		        		
+	        			} 
+		       			
 		        	}
 		   
 		    		
