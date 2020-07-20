@@ -53,6 +53,7 @@ public class CrearComanda {
 	/** DECLARACIÓ GLOBAL D'ALGUNES VARIABLES */
 
 	private String idClient;
+	private String dLimit = "";
 	private double iva;
 	private double total;
 	
@@ -63,16 +64,18 @@ public class CrearComanda {
 	JButton button = new JButton("VALIDAR COMANDA");
 	JButton button_1 = new JButton("TORNAR ENRERE");
 	JButton button2 = new JButton("FINALITZAR COMANDA");
+	JButton btnAsignarDataLmit = new JButton("ASIGNAR DATA L\u00CDMIT");
+	JButton btnSenseDataLmit = new JButton("SENSE DATA L\u00CDMIT");
 	ArrayList<ProducteCl> miLista = sqlP.veureProducte();
 	ArrayList<ServeiCl> miLista2 = sqlP.veureServei();
 	ArrayList<ComandaCl> miLista3 = sqlC.consultarComandes();
 	SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy"); 
 	JTextPane textPane_6 = new JTextPane();
+	JCalendar calendar_1;
 	private JTextField txtProducte;
 	private JTextField txtServei;
 	private JTextField txtAfegir;
 	private JTextField txtCrearComanda;
-
 	
 	/** FUNCIÓ PER A CRIDAR A LA FUNCIÓ QUE COMPOSA ELS ELEMENTS DE LA PANTALLA I A LES FUNCIONS DE CONSTRUCCIÓ DE LA TAULA */
 
@@ -97,14 +100,113 @@ public class CrearComanda {
 		frame.setResizable(false);
 		frame.getContentPane().setFocusable(false);
 		frame.getContentPane().setFocusTraversalKeysEnabled(false);
-		frame.setBounds(730, 300, 618, 434);
+		frame.setBounds(730, 300, 618, 527);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
         frame.setTitle("OnTime Agency App - v.2.0");
 
         
-		/** Inici del conjunt d'elements que composen la capçalera */
+		/** Inici conjunt de codi dels botons de designació de data límit */
+        
+        btnAsignarDataLmit.setForeground(Color.BLACK);
+        btnAsignarDataLmit.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				
+				btnAsignarDataLmit.setBackground(Color.BLACK);
+				btnAsignarDataLmit.setForeground(Color.WHITE);
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				
+				btnAsignarDataLmit.setBackground(Color.WHITE);
+				btnAsignarDataLmit.setForeground(Color.BLACK);
+				
+			}
+			
+		});
+        
+		btnAsignarDataLmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				dLimit = ""+
+				calendar_1.getDate().toString().charAt(25) + calendar_1.getDate().toString().charAt(26) + calendar_1.getDate().toString().charAt(27) + calendar_1.getDate().toString().charAt(28) + "/" + 
+				calendar_1.getDate().toString().charAt(4) + calendar_1.getDate().toString().charAt(5) + calendar_1.getDate().toString().charAt(6) + "/" +
+				calendar_1.getDate().toString().charAt(8) + calendar_1.getDate().toString().charAt(9) + "";
+				System.out.println(dLimit);
+				
+			}
+		});
 		
+		
+		btnSenseDataLmit.setForeground(Color.BLACK);
+		btnSenseDataLmit.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				
+				btnSenseDataLmit.setBackground(Color.BLACK);
+				btnSenseDataLmit.setForeground(Color.WHITE);
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				
+				btnSenseDataLmit.setBackground(Color.WHITE);
+				btnSenseDataLmit.setForeground(Color.BLACK);
+				
+			}
+			
+		});
+		
+		btnSenseDataLmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dLimit = "Sense data límit";
+			}
+		});
+		btnSenseDataLmit.setForeground(Color.BLACK);
+		btnSenseDataLmit.setFont(new Font("HelveticaNeue", Font.BOLD, 15));
+		btnSenseDataLmit.setFocusPainted(false);
+		btnSenseDataLmit.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
+		btnSenseDataLmit.setBackground(Color.WHITE);
+		btnSenseDataLmit.setBounds(304, 338, 279, 30);
+		frame.getContentPane().add(btnSenseDataLmit);
+		btnAsignarDataLmit.setForeground(Color.BLACK);
+		btnAsignarDataLmit.setFont(new Font("HelveticaNeue", Font.BOLD, 15));
+		btnAsignarDataLmit.setFocusPainted(false);
+		btnAsignarDataLmit.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
+		btnAsignarDataLmit.setBackground(Color.WHITE);
+		btnAsignarDataLmit.setBounds(304, 308, 279, 30);
+		frame.getContentPane().add(btnAsignarDataLmit);
+		
+		/** Fi conjunt de codi dels botons de designació de data límit */
+
+		
+		/** Inici Codi JCalendar */
+		
+		calendar_1 = new JCalendar();
+		calendar_1.getDayChooser().setDecorationBordersVisible(true);
+		calendar_1.getDayChooser().setDecorationBackgroundColor(Color.BLACK);
+		calendar_1.getDayChooser().setBackground(Color.BLACK);
+		calendar_1.getDayChooser().getDayPanel().setBackground(Color.GRAY);
+		calendar_1.getDayChooser().setForeground(Color.BLACK);
+		calendar_1.getDayChooser().setWeekdayForeground(Color.BLACK);
+		calendar_1.setWeekdayForeground(Color.BLACK);
+		calendar_1.setSundayForeground(new Color(164, 0, 0));
+		calendar_1.setDecorationBackgroundColor(Color.WHITE);
+		calendar_1.setBounds(304, 143, 279, 161);
+		calendar_1.setWeekOfYearVisible(false);
+		frame.getContentPane().add(calendar_1);
+		
+		/** Fi Codi JCalendar */
+		
+		
+		/** Inici del conjunt d'elements que composen la capçalera */
+
 		txtAfegir = new JTextField();
 		txtAfegir.setOpaque(false);
 		txtAfegir.setText("AFEGIR");
@@ -117,7 +219,7 @@ public class CrearComanda {
 		txtAfegir.setEditable(false);
 		txtAfegir.setBorder(null);
 		txtAfegir.setBackground(Color.BLACK);
-		txtAfegir.setBounds(20, 175, 99, 36);
+		txtAfegir.setBounds(20, 248, 99, 36);
 		frame.getContentPane().add(txtAfegir);
 		
 		JTextField textPane_1 = new JTextField();
@@ -132,7 +234,7 @@ public class CrearComanda {
 		textPane_1.setFocusCycleRoot(false);
 		textPane_1.setEditable(false);
 		textPane_1.setBackground(new Color(0, 0, 0));
-		textPane_1.setBounds(20, 93, 105, 46);
+		textPane_1.setBounds(20, 154, 105, 46);
 		frame.getContentPane().add(textPane_1);
 		
 		txtProducte = new JTextField();
@@ -147,7 +249,7 @@ public class CrearComanda {
 		txtProducte.setFocusCycleRoot(false);
 		txtProducte.setEditable(false);
 		txtProducte.setBackground(Color.BLACK);
-		txtProducte.setBounds(20, 128, 99, 36);
+		txtProducte.setBounds(20, 189, 99, 36);
 		frame.getContentPane().add(txtProducte);
 
 		JPanel panel = new JPanel();
@@ -155,10 +257,6 @@ public class CrearComanda {
 		panel.setBounds(0, 0, 612, 82);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		JCalendar calendar = new JCalendar();
-		calendar.setBounds(319, 160, 100, 100);
-		panel.add(calendar);
 		
 		JTextField txtLogIn = new JTextField();
 		txtLogIn.setBounds(233, 11, 170, 29);
@@ -204,7 +302,7 @@ public class CrearComanda {
 		textPane_2.setFocusTraversalKeysEnabled(false);
 		textPane_2.setFocusCycleRoot(false);
 		textPane_2.setBackground(Color.WHITE);
-		textPane_2.setBounds(435, 303, 80, 30);
+		textPane_2.setBounds(435, 402, 80, 30);
 		frame.getContentPane().add(textPane_2);
 		
 		JTextPane txtpnCostTotal = new JTextPane();
@@ -216,7 +314,7 @@ public class CrearComanda {
 		txtpnCostTotal.setFocusCycleRoot(false);
 		txtpnCostTotal.setEditable(false);
 		txtpnCostTotal.setBackground(Color.BLACK);
-		txtpnCostTotal.setBounds(294, 303, 137, 30);
+		txtpnCostTotal.setBounds(294, 402, 137, 30);
 		frame.getContentPane().add(txtpnCostTotal);
 
 		
@@ -227,7 +325,7 @@ public class CrearComanda {
 	
 		
 		comboBox.setFont(new Font("HelveticaNeue", Font.PLAIN, 11));
-		comboBox.setBounds(135, 115, 128, 36);
+		comboBox.setBounds(135, 176, 128, 36);
 		frame.getContentPane().add(comboBox);
 		comboBox.addItem("");
 		
@@ -238,7 +336,7 @@ public class CrearComanda {
 		}
 		
 		comboBox_1.setFont(new Font("HelveticaNeue", Font.PLAIN, 11));
-		comboBox_1.setBounds(135, 199, 128, 36);
+		comboBox_1.setBounds(135, 268, 128, 36);
 		frame.getContentPane().add(comboBox_1);
 		comboBox_1.addItem("");
 
@@ -247,13 +345,7 @@ public class CrearComanda {
 			comboBox_1.addItem(miLista2.get(i).getElement()+", "+miLista2.get(i).getUnitats()+" per "+miLista2.get(i).getFrequencia());
 			
 		}
-		/*
-		for(int i = 1; i<=31; i++) {
-			
-			comboBox_2.addItem(Integer.toString(i));
-			
-		}
-		*/
+
 		/** Fi declaració dels "ComboBox" */
 
 
@@ -321,7 +413,7 @@ public class CrearComanda {
 			
 		});
 		
-		button_1.setBounds(435, 344, 148, 36);
+		button_1.setBounds(435, 436, 148, 36);
 		frame.getContentPane().add(button_1);
 		
 		/** Fi botó "Tornar Enrere" */
@@ -399,7 +491,7 @@ public class CrearComanda {
 			
 		});
 		
-		button.setBounds(283, 344, 148, 36);
+		button.setBounds(283, 436, 148, 36);
 		frame.getContentPane().add(button);
 		
 		/** Fi botó "Validar Comanda" */
@@ -459,19 +551,7 @@ public class CrearComanda {
 						String id =  miLista.get(comboBox.getSelectedIndex()-1).getIdProducte();
 						LocalDate dataS = java.time.LocalDate.now();  
 						String totalS = Double.toString(total);
-						String dLimit = "";
-						System.out.println(rec);
-/*
-						if(comboBox_2.getSelectedItem().toString().equals("") || comboBox_3.getSelectedItem().toString().equals("") || comboBox_3.getSelectedItem().toString().equals("")) {
-							
-							dLimit = "Sense data límit";
-							
-						} else {
-							
-							dLimit =  comboBox_2.getSelectedItem().toString() + "-" + comboBox_3.getSelectedItem().toString() + "-" + comboBox_4.getSelectedItem().toString();
-							
-						}
-						*/
+						
 						sqlC.crearComanda("p", rec, id, dataS.toString(), "", totalS, idClient, dLimit,textPane_6.getText());
 					} 
 					
@@ -521,13 +601,15 @@ public class CrearComanda {
 			
 		});
 		
-		button2.setBounds(262, 344, 169, 36);
+		button2.setBounds(262, 436, 169, 36);
 		frame.getContentPane().add(button2);
 		
 		/** Fi botó "Finalitzar Comanda" */
 
 		
-		JTextPane txtpnDataLmit = new JTextPane();
+		JTextField txtpnDataLmit = new JTextField();
+		txtpnDataLmit.setBorder(null);
+		txtpnDataLmit.setHorizontalAlignment(SwingConstants.CENTER);
 		txtpnDataLmit.setText("DATA L\u00CDMIT");
 		txtpnDataLmit.setForeground(Color.WHITE);
 		txtpnDataLmit.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
@@ -536,7 +618,7 @@ public class CrearComanda {
 		txtpnDataLmit.setFocusCycleRoot(false);
 		txtpnDataLmit.setEditable(false);
 		txtpnDataLmit.setBackground(Color.BLACK);
-		txtpnDataLmit.setBounds(378, 93, 148, 36);
+		txtpnDataLmit.setBounds(304, 103, 279, 36);
 		frame.getContentPane().add(txtpnDataLmit);
 		
 		JTextPane txtpnDescripciComanda = new JTextPane();
@@ -549,21 +631,12 @@ public class CrearComanda {
 		txtpnDescripciComanda.setFocusCycleRoot(false);
 		txtpnDescripciComanda.setEditable(false);
 		txtpnDescripciComanda.setBackground(Color.BLACK);
-		txtpnDescripciComanda.setBounds(20, 280, 227, 36);
+		txtpnDescripciComanda.setBounds(20, 368, 227, 36);
 		frame.getContentPane().add(txtpnDescripciComanda);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(20, 310, 227, 70);
+		scrollPane.setBounds(20, 402, 227, 70);
 		frame.getContentPane().add(scrollPane);
-		scrollPane.setViewportView(textPane_6);
-		
-		textPane_6.setText("");
-		textPane_6.setForeground(Color.BLACK);
-		textPane_6.setFont(new Font("Dialog", Font.PLAIN, 13));
-		textPane_6.setFocusTraversalKeysEnabled(false);
-		textPane_6.setFocusCycleRoot(false);
-		textPane_6.setEditable(true);
-		textPane_6.setBackground(Color.WHITE);
 		
 		txtServei = new JTextField();
 		txtServei.setOpaque(false);
@@ -577,7 +650,7 @@ public class CrearComanda {
 		txtServei.setEditable(false);
 		txtServei.setBorder(null);
 		txtServei.setBackground(Color.BLACK);
-		txtServei.setBounds(20, 211, 93, 36);
+		txtServei.setBounds(20, 284, 93, 36);
 		frame.getContentPane().add(txtServei);
 		
 		JTextPane textPane = new JTextPane();
@@ -589,17 +662,25 @@ public class CrearComanda {
 		textPane.setFocusCycleRoot(false);
 		textPane.setEditable(false);
 		textPane.setBackground(Color.BLACK);
-		textPane.setBounds(525, 303, 24, 30);
+		textPane.setBounds(520, 402, 24, 30);
 		frame.getContentPane().add(textPane);
 		
-		JCalendar calendar_1 = new JCalendar();
-		calendar_1.setBounds(321, 128, 262, 134);
-		frame.getContentPane().add(calendar_1);
+		
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(0, 83, 612, 322);
+		lblNewLabel_1.setBounds(0, 10, 612, 488);
 		frame.getContentPane().add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(CrearComanda.class.getResource("/VISTA/img/backg.png")));
+		textPane_6.setBounds(22, 394, 225, 68);
+		frame.getContentPane().add(textPane_6);
+		
+		textPane_6.setText("");
+		textPane_6.setForeground(Color.BLACK);
+		textPane_6.setFont(new Font("Dialog", Font.PLAIN, 13));
+		textPane_6.setFocusTraversalKeysEnabled(false);
+		textPane_6.setFocusCycleRoot(false);
+		textPane_6.setEditable(true);
+		textPane_6.setBackground(Color.WHITE);
 
 		for(int x=0; x<4; x++) {
 			
