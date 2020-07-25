@@ -104,6 +104,7 @@ public class GenerarFactura {
 	private String anyAct;
 	private JTextField txtMesARecuperar;
 	private JTextField txtARecuperar;
+	private int contador = 0;
 	
 	/** FUNCIÓ PER A CRIDAR A LA FUNCIÓ QUE COMPOSA ELS ELEMENTS DE LA PANTALLA I A LES FUNCIONS DE CONSTRUCCIÓ DE LA TAULA 
 	 * @throws IOException 
@@ -169,8 +170,10 @@ public class GenerarFactura {
 				
 				try {
 					
+					preuFinal = 0.0;
+					contador = 0;
 					contingut = "";
-					
+
 					contingut += dataS + "\n";
 					contingut += "" + "\n";
 					contingut += " Client: " + sqlCl.consultarNomClient(idEmpresa) + "\n";
@@ -201,7 +204,8 @@ public class GenerarFactura {
 									if(miLista2.get(x).getNumero().equals(miLista3.get(y).getIdFactura())) {
 										
 										contingut += " " + miLista3.get(y).getIdFactura() + " _________ " +miLista3.get(y).getDescripcio() + " ________ " + miLista3.get(y).getQuantitat() + " ________ " + miLista3.get(y).getPreuUnitari() + " ________ " + miLista3.get(y).getTotal() + " " + "\n";
-										
+										++contador;
+
 										for(int c=0; c<miLista3.get(y).getTotal().length(); c++) {
 											
 											if(miLista3.get(y).getTotal().charAt(c)!='€') {
@@ -241,7 +245,6 @@ public class GenerarFactura {
 				try {
 				
 					contingut += ""+"\n";
-					preuFinal = preuFinal;
 					contingut += "Total: "+ preuFinal +" €";
 					
 					FileOutputStream pdf = new FileOutputStream(ruta+".pdf");
@@ -260,7 +263,17 @@ public class GenerarFactura {
 				} catch (Exception e2) {
 					// TODO: handle exception
 				}
-		
+				
+				
+				if(contador>0) {
+					
+					JOptionPane.showMessageDialog(null, "S'ha creat la factura Correctament","",JOptionPane.DEFAULT_OPTION);
+					
+				} else {
+					
+					JOptionPane.showMessageDialog(null, "Aquest client no ha fet cap comanda durant el mes seleccionat.","AVÍS",JOptionPane.DEFAULT_OPTION);
+					
+				}
 				
 			}
 		});
@@ -448,7 +461,7 @@ public class GenerarFactura {
 		public void actionPerformed(java.awt.event.ActionEvent e) {
 				
 				boolean totsIguals = false;
-				int contador = 0;
+				contador = 0;
 				int unitats = 1;
 				double total = 0;
 				String preuNum = "";
