@@ -243,7 +243,9 @@ public class GenerarFactura {
 				}
 				
 				try {
-				
+					
+					preuFinal = Math.round(preuFinal * 100);
+					preuFinal = preuFinal/100;
 					contingut += ""+"\n";
 					contingut += "Total: "+ preuFinal +" €";
 					
