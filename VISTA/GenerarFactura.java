@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.spi.CalendarDataProvider;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -55,7 +56,12 @@ import DADES.SQLComandes;
 import DADES.SQLFactura;
 import DADES.SQLProductes;
 import MODEL.ComandaCl;
+import MODEL.FacturaCl;
+import MODEL.LiniaFacturaCl;
 import MODEL.ProducteCl;
+import com.toedter.calendar.JMonthChooser;
+import com.toedter.calendar.JYearChooser;
+import com.toedter.calendar.JCalendar;
 
 public class GenerarFactura {
 
@@ -78,17 +84,26 @@ public class GenerarFactura {
 	JComboBox<String> comboBox = new JComboBox<String>();
 	JButton btnNewButton_1 = new JButton("GENERAR FACTURA");
 	JButton btnNewButton_2 = new JButton("TORNAR A INICI");
+	JCalendar calendar = new JCalendar();
+	LocalDate dataS = java.time.LocalDate.now();  
 
 	
 	/** DECLARACIÓ GLOBAL D'ALGUNES VARIABLES */
 
 	private String idEmpresa;
+	private String ruta = "";
+	private String contingut = "";
+	private String preuTotalStr = "";
 	private JTextField txtGenerarFactura;
 	private JTextField txtnotaNoEs;
 	private String totalLinia = "";
 	private double finalLinia = 0.0;
+	private double preuFinal = 0.0;
 	private String anyCom;
+	private String mesCom;
 	private String anyAct;
+	private JTextField txtMesARecuperar;
+	private JTextField txtARecuperar;
 	
 	/** FUNCIÓ PER A CRIDAR A LA FUNCIÓ QUE COMPOSA ELS ELEMENTS DE LA PANTALLA I A LES FUNCIONS DE CONSTRUCCIÓ DE LA TAULA 
 	 * @throws IOException 
@@ -120,6 +135,176 @@ public class GenerarFactura {
 		
 		/** Inici del conjunt d'elements que composen la capçalera */
 		
+		JButton btnNewButton = new JButton("RECUPERAR FACTURA");
+		btnNewButton.setVisible(true);
+		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				
+				btnNewButton.setBackground(Color.BLACK);
+				btnNewButton.setForeground(Color.WHITE);
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				
+				btnNewButton.setBackground(Color.WHITE);
+				btnNewButton.setForeground(Color.BLACK);
+				
+			}
+			
+		});
+		
+		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
+		btnNewButton.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					
+					contingut = "";
+					
+					contingut += dataS + "\n";
+					contingut += "" + "\n";
+					contingut += " Client: " + sqlCl.consultarNomClient(idEmpresa) + "\n";
+					contingut += "" + "\n";
+					
+					contingut += "\n";
+					contingut += "\n";
+					contingut += "" + "\n";
+					
+					ArrayList<String> miLista = sqlF.consultarDataFacturaMensual();
+					ArrayList<FacturaCl> miLista2 = sqlF.consultarFacturaMensual();
+					ArrayList<LiniaFacturaCl> miLista3 = sqlF.consultarLiniaFactura();
+
+						for (int x = 0; x < miLista.size(); x++) {
+							
+							anyCom = "" + miLista.get(x).charAt(0) + miLista.get(x).charAt(1) + miLista.get(x).charAt(2) + miLista.get(x).charAt(3);
+							mesCom = "" + miLista.get(x).charAt(5) + miLista.get(x).charAt(6);
+							int anySel = calendar.getDate().getYear()+1900;
+							int mesSel = calendar.getDate().getMonth()+1;
+							
+							if(miLista2.get(x).getEmpresa().equals(idEmpresa) && mesSel == Integer.parseInt(mesCom) && anySel == Integer.parseInt(anyCom)) {
+							
+								miLista2.get(x).getEmpresa();
+								miLista2.get(x).getData();
+								
+								for(int y=0; y < miLista3.size(); y++) {
+									
+									if(miLista2.get(x).getNumero().equals(miLista3.get(y).getIdFactura())) {
+										
+										contingut += " " + miLista3.get(y).getIdFactura() + " _________ " +miLista3.get(y).getDescripcio() + " ________ " + miLista3.get(y).getQuantitat() + " ________ " + miLista3.get(y).getPreuUnitari() + " ________ " + miLista3.get(y).getTotal() + " " + "\n";
+										
+										for(int c=0; c<miLista3.get(y).getTotal().length(); c++) {
+											
+											if(miLista3.get(y).getTotal().charAt(c)!='€') {
+												
+												preuTotalStr += miLista3.get(y).getTotal().charAt(c);
+												
+											}
+
+										}
+										
+										preuFinal += Double.parseDouble(preuTotalStr);
+										preuTotalStr = "";
+										
+									}
+								}
+								
+							} 
+						
+						}
+						
+				} catch (Exception er) {
+					
+					System.out.println("");
+				
+				}
+				
+				JFileChooser nouPdf = new JFileChooser();
+				int option = nouPdf.showSaveDialog(null);
+				
+				if(option == JFileChooser.APPROVE_OPTION) {
+					
+					File f = nouPdf.getSelectedFile();
+					ruta = f.toString();
+					
+				}
+				
+				try {
+				
+					contingut += ""+"\n";
+					preuFinal = preuFinal;
+					contingut += "Total: "+ preuFinal +" €";
+					
+					FileOutputStream pdf = new FileOutputStream(ruta+".pdf");
+					Document doc = new Document();
+					PdfWriter.getInstance(doc, pdf);
+					doc.open();
+					String t = "C:\\Users\\Marc Sanjust\\eclipse-workspace\\ProjecteFiGrau\\src\\VISTA\\img\\pdfbase.png";
+					Image img = Image.getInstance(t);
+					img.setAbsolutePosition(0f, 0f);
+					Paragraph test = new Paragraph(contingut);
+					test.setAlignment(Element.ALIGN_CENTER);
+				    doc.add(img);
+					doc.add(test);
+					doc.close();
+					
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+		
+				
+			}
+		});
+		
+		calendar.setBounds(277, 216, 194, 20);
+		frame.getContentPane().add(calendar);
+		
+		txtARecuperar = new JTextField();
+		txtARecuperar.setText("A RECUPERAR");
+		txtARecuperar.setSelectionColor(Color.GRAY);
+		txtARecuperar.setOpaque(false);
+		txtARecuperar.setHorizontalAlignment(SwingConstants.CENTER);
+		txtARecuperar.setForeground(Color.WHITE);
+		txtARecuperar.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
+		txtARecuperar.setFocusable(false);
+		txtARecuperar.setFocusTraversalKeysEnabled(false);
+		txtARecuperar.setEditable(false);
+		txtARecuperar.setColumns(10);
+		txtARecuperar.setBorder(null);
+		txtARecuperar.setBackground(Color.BLACK);
+		txtARecuperar.setAutoscrolls(false);
+		txtARecuperar.setBounds(277, 172, 190, 33);
+		frame.getContentPane().add(txtARecuperar);
+		
+		txtMesARecuperar = new JTextField();
+		txtMesARecuperar.setText("MES I ANY");
+		txtMesARecuperar.setSelectionColor(Color.GRAY);
+		txtMesARecuperar.setOpaque(false);
+		txtMesARecuperar.setHorizontalAlignment(SwingConstants.CENTER);
+		txtMesARecuperar.setForeground(Color.WHITE);
+		txtMesARecuperar.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
+		txtMesARecuperar.setFocusable(false);
+		txtMesARecuperar.setFocusTraversalKeysEnabled(false);
+		txtMesARecuperar.setEditable(false);
+		txtMesARecuperar.setColumns(10);
+		txtMesARecuperar.setBorder(null);
+		txtMesARecuperar.setBackground(Color.BLACK);
+		txtMesARecuperar.setAutoscrolls(false);
+		txtMesARecuperar.setBounds(277, 140, 190, 33);
+		frame.getContentPane().add(txtMesARecuperar);
+		
+		btnNewButton.setBounds(277, 265, 190, 38);
+		frame.getContentPane().add(btnNewButton);
+		
 		txtnotaNoEs = new JTextField();
 		txtnotaNoEs.setText("*nota: assegura't de calcular el preu final abans de generar la factura\r\n");
 		txtnotaNoEs.setSelectionColor(Color.GRAY);
@@ -140,7 +325,7 @@ public class GenerarFactura {
 		textField_3 = new JTextField();
 		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_3.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
-		textField_3.setBounds(160, 132, 190, 33);
+		textField_3.setBounds(45, 155, 190, 33);
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
 		
@@ -204,13 +389,13 @@ public class GenerarFactura {
 		txtMesAFacturar.setBorder(null);
 		txtMesAFacturar.setBackground(Color.BLACK);
 		txtMesAFacturar.setAutoscrolls(false);
-		txtMesAFacturar.setBounds(159, 192, 190, 33);
+		txtMesAFacturar.setBounds(45, 187, 190, 33);
 		frame.getContentPane().add(txtMesAFacturar);
 		
 		
 		/** Inici codi Combo Box */
 		
-		comboBox.setBounds(159, 224, 190, 27);
+		comboBox.setBounds(45, 219, 190, 27);
 		frame.getContentPane().add(comboBox);
 		comboBox.addItem("");
 		comboBox.addItem("Gener");
@@ -260,18 +445,15 @@ public class GenerarFactura {
 		btnNewButton_1.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			
-public void actionPerformed(java.awt.event.ActionEvent e) {
+		public void actionPerformed(java.awt.event.ActionEvent e) {
 				
 				boolean totsIguals = false;
 				int contador = 0;
 				int unitats = 1;
 				double total = 0;
-				String ruta = "";
 				String preuNum = "";
-				double preuFinal = 0.0;
+				preuFinal = 0.0;
 				int tope = 0;
-				LocalDate dataS = java.time.LocalDate.now();  
-
 				
 				if(comboBox.getSelectedIndex() == 0) {
 					
@@ -295,7 +477,7 @@ public void actionPerformed(java.awt.event.ActionEvent e) {
 							
 						}
 						
-						String contingut = "";
+						contingut = "";
 						
 						try {
 							contingut += dataS + "\n";
@@ -333,7 +515,7 @@ public void actionPerformed(java.awt.event.ActionEvent e) {
 										if(miLista.get(i).getTotal().charAt(y) == '€') {
 											
 											preuFinal += Double.parseDouble(preuNum);
-											sqlF.crearFactura(textField_3.getText(), dataS.toString(), sqlCl.consultarEmpresaClient(idEmpresa), sqlCl.consultarNomClient(idEmpresa), Double.toString(preuFinal)+"€");
+											sqlF.crearFactura(textField_3.getText(), dataS.toString(), idEmpresa, sqlCl.consultarNomClient(idEmpresa), Double.toString(preuFinal)+"€");
 											
 										}
 									}
@@ -456,7 +638,7 @@ public void actionPerformed(java.awt.event.ActionEvent e) {
 			
 		});
 		
-		btnNewButton_1.setBounds(160, 293, 190, 38);
+		btnNewButton_1.setBounds(45, 265, 190, 38);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		/** Fi botó "Generar Factura" */
@@ -515,7 +697,7 @@ public void actionPerformed(java.awt.event.ActionEvent e) {
 			
 		});
 		
-		btnNewButton_2.setBounds(160, 331, 190, 38);
+		btnNewButton_2.setBounds(162, 331, 190, 38);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		/** Fi botó "Tornar a Inici" */
@@ -535,7 +717,7 @@ public void actionPerformed(java.awt.event.ActionEvent e) {
 		txtNmeroDeComanda.setBorder(null);
 		txtNmeroDeComanda.setBackground(Color.BLACK);
 		txtNmeroDeComanda.setAutoscrolls(false);
-		txtNmeroDeComanda.setBounds(159, 94, 190, 33);
+		txtNmeroDeComanda.setBounds(44, 117, 190, 33);
 		frame.getContentPane().add(txtNmeroDeComanda);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");

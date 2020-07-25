@@ -11,6 +11,7 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
 import MODEL.ComandaCl;
+import MODEL.FacturaCl;
 import MODEL.LiniaFacturaCl;
 
 public class SQLFactura {
@@ -147,6 +148,87 @@ public class SQLFactura {
 		}
 		
 		return miLista;
+		
+	}
+	
+	public ArrayList<FacturaCl> consultarFacturaMensual() throws SQLException {
+		
+		conectar();
+		ArrayList<FacturaCl> miLista = new ArrayList<FacturaCl>();
+		FacturaCl linea = null;
+		sentencia = c.createStatement();
+		String consultaSql = "SELECT * FROM facturaMensual;";
+		
+		try {
+			
+			ResultSet rs = sentencia.executeQuery(consultaSql);
+			
+			while (rs.next()) {
+				
+				linea = new FacturaCl(rs.getString("numero"), rs.getString("data"), rs.getString("empresa"), rs.getString("concepte"), "","", rs.getString("total"));
+				miLista.add(linea);
+				
+			}
+			
+			rs.close();
+			sentencia.close();
+			c.close();
+			
+		} catch (Exception e) {
+			
+			System.out.println("ERROR");
+			
+		}
+		
+		return miLista;
+		
+	}
+	
+	public ArrayList<String> consultarDataFacturaMensual() throws SQLException {
+		
+		conectar();
+		ArrayList<String> miLista = new ArrayList<String>();
+		String linea = null;
+		sentencia = c.createStatement();
+		String consultaSql = "SELECT data, numero FROM facturaMensual;";
+		
+		try {
+			
+			ResultSet rs = sentencia.executeQuery(consultaSql);
+			
+			while (rs.next()) {
+				
+				linea = rs.getString("data") + " / " + rs.getString("numero");
+				miLista.add(linea);
+				
+			}
+			
+			rs.close();
+			sentencia.close();
+			c.close();
+			
+		} catch (Exception e) {
+			
+			System.out.println("ERROR");
+			
+		}
+		
+		return miLista;
+		
+	}
+	
+	public String consultarEstatComanda(String num) throws SQLException, ClassNotFoundException {
+		
+		conectar();
+		String stat = null;
+		sentencia = c.createStatement();
+		String consultaSql = "SELECT estatComanda FROM comanda WHERE numComanda = '"+num+"';";
+		ResultSet rs = sentencia.executeQuery(consultaSql);
+		stat = rs.getString("estatComanda");
+		rs.close();
+		sentencia.close();
+		c.close();
+		return stat;
 		
 	}
 	
