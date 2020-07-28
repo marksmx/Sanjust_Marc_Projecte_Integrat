@@ -385,20 +385,10 @@ public class CrearComanda {
 					
 					/** Depenent de si hem començat la comanda o no, tornarem al inici o es refrescarà la pestanya */
 					
-					if(textPane_2.getText().equals("")) {
+					Client frm = new Client(idClient);
+					frm.frame.setVisible(true);
+					frame.setVisible(false);
 						
-						Client frm = new Client(idClient);
-						frm.frame.setVisible(true);
-						frame.setVisible(false);
-						
-					}else {
-						
-						CrearComanda frm = new CrearComanda(idClient);
-						frm.frame.setVisible(true);
-						frame.setVisible(false);
-						
-					}
-					
 				} catch (SQLException e1) {
 					
 					e1.printStackTrace();
@@ -667,7 +657,7 @@ public class CrearComanda {
 		
 		
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(0, 10, 612, 488);
 		frame.getContentPane().add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(CrearComanda.class.getResource("/VISTA/img/backg.png")));

@@ -757,7 +757,7 @@ public class Principal {
 		panel_6.setBounds(29, 272, perP, 10);
 		frame.getContentPane().add(panel_6);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(Principal.class.getResource("/VISTA/img/backg.png")));
 		lblNewLabel_1.setBounds(0, 33, 670, 478);
 		frame.getContentPane().add(lblNewLabel_1);

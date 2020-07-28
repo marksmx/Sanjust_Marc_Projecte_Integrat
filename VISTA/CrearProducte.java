@@ -702,7 +702,7 @@ public class CrearProducte {
 		button_5.setBounds(224, 352, 115, 35);
 		frame.getContentPane().add(button_5);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(CrearProducte.class.getResource("/VISTA/img/backg.png")));
 		lblNewLabel_1.setBounds(0, -28, 813, 459);
 		frame.getContentPane().add(lblNewLabel_1);

@@ -253,7 +253,7 @@ public class GenerarFactura {
 					Document doc = new Document();
 					PdfWriter.getInstance(doc, pdf);
 					doc.open();
-					String t = "C:\\Users\\Marc Sanjust\\eclipse-workspace\\ProjecteFiGrau\\src\\VISTA\\img\\pdfbase.png";
+					String t = System.getProperty("user.dir")+"\\img\\pdfbase.png";
 					Image img = Image.getInstance(t);
 					img.setAbsolutePosition(0f, 0f);
 					Paragraph test = new Paragraph(contingut);
@@ -269,7 +269,7 @@ public class GenerarFactura {
 				
 				if(contador>0) {
 					
-					JOptionPane.showMessageDialog(null, "S'ha creat la factura Correctament","",JOptionPane.DEFAULT_OPTION);
+					JOptionPane.showMessageDialog(null, "S'ha recuperat la factura Correctament","",JOptionPane.DEFAULT_OPTION);
 					
 				} else {
 					
@@ -617,7 +617,7 @@ public class GenerarFactura {
 											Document doc = new Document();
 											PdfWriter.getInstance(doc, pdf);
 											doc.open();
-											String t = "C:\\Users\\Marc Sanjust\\eclipse-workspace\\ProjecteFiGrau\\src\\VISTA\\img\\pdfbase.png";
+											String t = System.getProperty("user.dir")+"\\img\\pdfbase.png";
 											Image img = Image.getInstance(t);
 											img.setAbsolutePosition(0f, 0f);
 	  										Paragraph test = new Paragraph(contingut);

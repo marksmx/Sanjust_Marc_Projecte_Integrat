@@ -37,7 +37,8 @@ public class SQLClients {
 		try {
 			
 			Class.forName("org.sqlite.JDBC");
-			c = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Marc Sanjust\\eclipse-workspace\\ProjecteFiGrau\\src\\onTimeDB.db");
+			c = DriverManager.getConnection("jdbc:sqlite:onTimeDB.db");
+			//c = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Marc Sanjust\\eclipse-workspace\\ProjecteFiGrau\\src\\onTimeDB.db");
 			System.out.println("Exito al conectar con base de datos");
 
 		} catch (Exception e) {

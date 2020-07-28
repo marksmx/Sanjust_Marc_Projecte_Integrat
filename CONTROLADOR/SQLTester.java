@@ -1,6 +1,8 @@
 package CONTROLADOR;
 
 import java.awt.Image;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -18,6 +20,12 @@ public class SQLTester {
 		SQLProductes sqlP = new SQLProductes();
 		sqlC.conectar();
 		
+		
+		Path currentRelativePath = Paths.get("");
+		String s = currentRelativePath.toAbsolutePath().toString();
+		System.out.println("Current relative path is: " + s);
+		
+		/*
 		ArrayList<String> miLista = sqlCo.consultarDataLimit("0");
 		String matInfo[] = new String[miLista.size()];
 
@@ -36,7 +44,7 @@ public class SQLTester {
 			}
 			
 		}
-		
+		*/
 		//sqlU.modificarUsuari("hola", "hola", "hola", "dew", "hola");
 
 		//sqlU.exist();

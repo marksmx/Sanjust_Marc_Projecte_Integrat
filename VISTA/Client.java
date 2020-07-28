@@ -80,7 +80,7 @@ public class Client {
 	private final JTextField txtClient = new JTextField();
 	private final JTextField txtComandaSeleccionada = new JTextField();
 	private final JTextField txtClient_1 = new JTextField();
-	private final JLabel lblNewLabel_1 = new JLabel("New label");
+	private final JLabel lblNewLabel_1 = new JLabel("");
 	
 	/** FUNCIÓ PER A CRIDAR A LA FUNCIÓ QUE COMPOSA ELS ELEMENTS DE LA PANTALLA I A LES FUNCIONS DE CONSTRUCCIÓ DE LA TAULA */
 
@@ -259,7 +259,7 @@ public class Client {
 		frame.setResizable(false);
 		frame.getContentPane().setFocusable(false);
 		frame.getContentPane().setFocusTraversalKeysEnabled(false);
-		frame.setBounds(730, 300, 1149, 456);
+		frame.setBounds(730, 300, 1149, 468);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
         frame.setTitle("OnTime Agency App - v.2.0");
@@ -1164,7 +1164,7 @@ public class Client {
 				textField_1.setBorder(null);
 				textField_1.setBackground(Color.WHITE);
 				textField_1.setAutoscrolls(false);
-				textField_1.setBounds(0, 83, 210, 344);
+				textField_1.setBounds(0, 83, 210, 356);
 				frame.getContentPane().add(textField_1);
 				
 				frame.getContentPane().add(txtHola);
@@ -1195,13 +1195,13 @@ public class Client {
 				textField_3.setBorder(null);
 				textField_3.setBackground(Color.WHITE);
 				textField_3.setAutoscrolls(false);
-				textField_3.setBounds(935, 83, 210, 344);
+				textField_3.setBounds(935, 83, 210, 356);
 				
 				frame.getContentPane().add(textField_3);
 				
 				frame.getContentPane().add(txtClient);
 				lblNewLabel_1.setIcon(new ImageIcon(Client.class.getResource("/VISTA/img/backg.png")));
-				lblNewLabel_1.setBounds(152, 0, 775, 427);
+				lblNewLabel_1.setBounds(152, 0, 775, 439);
 				
 				frame.getContentPane().add(lblNewLabel_1);
 				button_1.addActionListener(new ActionListener() {

@@ -110,7 +110,7 @@ public class LogIn {
 	public LogIn() throws SQLException {
 		
 		initialize();
-
+		
 		if(sqlU.exist() == false) {
 			
 			CrearUsuari frm = new CrearUsuari();
@@ -143,7 +143,99 @@ public class LogIn {
 		frame.getContentPane().setLayout(null);
         frame.setTitle("OnTime Agency App - v.2.0");
 		
+		JTextField txtpnIdentificat = new JTextField();
+		txtpnIdentificat.setBounds(154, 86, 147, 29);
+		frame.getContentPane().add(txtpnIdentificat);
+		txtpnIdentificat.setBorder(null);
+		txtpnIdentificat.setHorizontalAlignment(SwingConstants.CENTER);
+		txtpnIdentificat.setText("IDENTIFICA'T");
+		txtpnIdentificat.setForeground(Color.WHITE);
+		txtpnIdentificat.setFont(new Font("HelveticaNeue", Font.PLAIN, 16));
+		txtpnIdentificat.setFocusable(false);
+		txtpnIdentificat.setFocusTraversalKeysEnabled(false);
+		txtpnIdentificat.setFocusCycleRoot(false);
+		txtpnIdentificat.setEditable(false);
+		txtpnIdentificat.setBackground(Color.BLACK);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(0, 0, 466, 82);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		txtLogIn = new JTextField();
+		txtLogIn.setHorizontalAlignment(SwingConstants.CENTER);
+		txtLogIn.setBounds(86, 11, 329, 60);
+		txtLogIn.setForeground(Color.BLACK);
+		panel.add(txtLogIn);
+		txtLogIn.setBorder(null);
+		txtLogIn.setAutoscrolls(false);
+		txtLogIn.setFocusTraversalKeysEnabled(false);
+		txtLogIn.setFocusable(false);
+		txtLogIn.setBackground(Color.WHITE);
+		txtLogIn.setSelectionColor(Color.GRAY);
+		txtLogIn.setEditable(false);
+		txtLogIn.setFont(new Font("HelveticaNeue", Font.PLAIN, 35));
+		txtLogIn.setText("ONTIME AGENCY");
+		txtLogIn.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(LogIn.class.getResource("/VISTA/img/logo.png")));
+		lblNewLabel.setBounds(0, 0, 102, 82);
+		panel.add(lblNewLabel);
+		
+		/** Fi del conjunt d'elements que composen la capçalera */
+		
+		
+		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setBorder(null);
+		layeredPane.setBackground(Color.BLACK);
+		layeredPane.setBounds(23, 116, 416, 160);
+		frame.getContentPane().add(layeredPane);
+		
+		txtpnUsuari = new JTextPane();
+		txtpnUsuari.setOpaque(false);
+		txtpnUsuari.setBackground(Color.BLACK);
+		txtpnUsuari.setForeground(Color.WHITE);
+		txtpnUsuari.setFocusable(false);
+		txtpnUsuari.setFocusTraversalKeysEnabled(false);
+		txtpnUsuari.setFocusCycleRoot(false);
+		txtpnUsuari.setEditable(false);
+		txtpnUsuari.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
+		txtpnUsuari.setText("DNI");
+		txtpnUsuari.setBounds(47, 11, 50, 27);
+		layeredPane.add(txtpnUsuari);
+		
+		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
+		textField.setBounds(10, 49, 124, 27);
+		layeredPane.add(textField);
+		textField.setColumns(10);
+		
+		txtpnContrasenya = new JTextField();
+		txtpnContrasenya.setBorder(null);
+		txtpnContrasenya.setHorizontalAlignment(SwingConstants.CENTER);
+		txtpnContrasenya.setBackground(Color.BLACK);
+		txtpnContrasenya.setForeground(Color.WHITE);
+		txtpnContrasenya.setText("CONTRASENYA");
+		txtpnContrasenya.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
+		txtpnContrasenya.setFocusable(false);
+		txtpnContrasenya.setFocusTraversalKeysEnabled(false);
+		txtpnContrasenya.setFocusCycleRoot(false);
+		txtpnContrasenya.setEditable(false);
+		txtpnContrasenya.setBounds(279, 11, 127, 35);
+		layeredPane.add(txtpnContrasenya);
+		
+		passwordField = new JPasswordField();
+		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
+		passwordField.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
+		passwordField.setBounds(279, 49, 127, 27);
+		layeredPane.add(passwordField);
+		
 		txtTest = new JTextField();
+		txtTest.setBounds(122, 140, 177, 20);
+		layeredPane.add(txtTest);
 		txtTest.setToolTipText("Rebr\u00E0s un correu al teu Gmail amb la teva contrasenya");
 		txtTest.setCaretColor(Color.RED);
 		txtTest.addMouseListener(new MouseAdapter() {
@@ -209,98 +301,6 @@ public class LogIn {
 		txtTest.setEditable(false);
 		txtTest.setBorder(null);
 		txtTest.setBackground(Color.BLACK);
-		txtTest.setBounds(138, 267, 210, 20);
-		frame.getContentPane().add(txtTest);
-		
-		JTextField txtpnIdentificat = new JTextField();
-		txtpnIdentificat.setBounds(154, 86, 147, 29);
-		frame.getContentPane().add(txtpnIdentificat);
-		txtpnIdentificat.setBorder(null);
-		txtpnIdentificat.setHorizontalAlignment(SwingConstants.CENTER);
-		txtpnIdentificat.setText("IDENTIFICA'T");
-		txtpnIdentificat.setForeground(Color.WHITE);
-		txtpnIdentificat.setFont(new Font("HelveticaNeue", Font.PLAIN, 16));
-		txtpnIdentificat.setFocusable(false);
-		txtpnIdentificat.setFocusTraversalKeysEnabled(false);
-		txtpnIdentificat.setFocusCycleRoot(false);
-		txtpnIdentificat.setEditable(false);
-		txtpnIdentificat.setBackground(Color.BLACK);
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		panel.setBounds(0, 0, 466, 82);
-		frame.getContentPane().add(panel);
-		panel.setLayout(null);
-		
-		txtLogIn = new JTextField();
-		txtLogIn.setHorizontalAlignment(SwingConstants.CENTER);
-		txtLogIn.setBounds(86, 11, 329, 60);
-		txtLogIn.setForeground(Color.BLACK);
-		panel.add(txtLogIn);
-		txtLogIn.setBorder(null);
-		txtLogIn.setAutoscrolls(false);
-		txtLogIn.setFocusTraversalKeysEnabled(false);
-		txtLogIn.setFocusable(false);
-		txtLogIn.setBackground(Color.WHITE);
-		txtLogIn.setSelectionColor(Color.GRAY);
-		txtLogIn.setEditable(false);
-		txtLogIn.setFont(new Font("HelveticaNeue", Font.PLAIN, 35));
-		txtLogIn.setText("ONTIME AGENCY");
-		txtLogIn.setColumns(10);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(LogIn.class.getResource("/VISTA/img/logo.png")));
-		lblNewLabel.setBounds(0, 0, 102, 82);
-		panel.add(lblNewLabel);
-		
-		/** Fi del conjunt d'elements que composen la capçalera */
-		
-		
-		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBorder(null);
-		layeredPane.setBackground(Color.BLACK);
-		layeredPane.setBounds(23, 116, 416, 107);
-		frame.getContentPane().add(layeredPane);
-		
-		txtpnUsuari = new JTextPane();
-		txtpnUsuari.setOpaque(false);
-		txtpnUsuari.setBackground(Color.BLACK);
-		txtpnUsuari.setForeground(Color.WHITE);
-		txtpnUsuari.setFocusable(false);
-		txtpnUsuari.setFocusTraversalKeysEnabled(false);
-		txtpnUsuari.setFocusCycleRoot(false);
-		txtpnUsuari.setEditable(false);
-		txtpnUsuari.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
-		txtpnUsuari.setText("DNI");
-		txtpnUsuari.setBounds(47, 11, 50, 27);
-		layeredPane.add(txtpnUsuari);
-		
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
-		textField.setBounds(10, 49, 124, 27);
-		layeredPane.add(textField);
-		textField.setColumns(10);
-		
-		txtpnContrasenya = new JTextField();
-		txtpnContrasenya.setBorder(null);
-		txtpnContrasenya.setHorizontalAlignment(SwingConstants.CENTER);
-		txtpnContrasenya.setBackground(Color.BLACK);
-		txtpnContrasenya.setForeground(Color.WHITE);
-		txtpnContrasenya.setText("CONTRASENYA");
-		txtpnContrasenya.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
-		txtpnContrasenya.setFocusable(false);
-		txtpnContrasenya.setFocusTraversalKeysEnabled(false);
-		txtpnContrasenya.setFocusCycleRoot(false);
-		txtpnContrasenya.setEditable(false);
-		txtpnContrasenya.setBounds(279, 11, 127, 35);
-		layeredPane.add(txtpnContrasenya);
-		
-		passwordField = new JPasswordField();
-		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
-		passwordField.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
-		passwordField.setBounds(279, 49, 127, 27);
-		layeredPane.add(passwordField);
 		
 		
 		/** Inici codi botó "Entratr" */
@@ -368,7 +368,7 @@ public class LogIn {
 			
 		});
 		
-		btnEntrar.setBounds(177, 234, 117, 29);
+		btnEntrar.setBounds(169, 220, 117, 29);
 		frame.getContentPane().add(btnEntrar);
 		lblNewLabel_1.setIcon(new ImageIcon(LogIn.class.getResource("/VISTA/img/backg.png")));
 		lblNewLabel_1.setBounds(0, 81, 348, 237);
