@@ -37,8 +37,8 @@ public class SQLClients {
 		try {
 			
 			Class.forName("org.sqlite.JDBC");
-			c = DriverManager.getConnection("jdbc:sqlite:onTimeDB.db");
-			//c = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Marc Sanjust\\eclipse-workspace\\ProjecteFiGrau\\src\\onTimeDB.db");
+			//c = DriverManager.getConnection("jdbc:sqlite:onTimeDB.db");
+			c = DriverManager.getConnection("jdbc:sqlite:"+System.getProperty("user.dir")+"\\src\\onTimeDB.db");
 			System.out.println("Exito al conectar con base de datos");
 
 		} catch (Exception e) {
@@ -224,6 +224,41 @@ public class SQLClients {
 		}
 		
 		return fullName;
+		
+	}
+	
+/** FUNCIO PER A CONSULTAR EL ID D'UN CLIENT A TRAVÉS DEL SEU ID */
+	
+	public ArrayList<String> consultarIDClient() throws SQLException {
+			
+		conectar();
+		ArrayList<String> miLista = new ArrayList<String>();
+		String cli = null;
+		sentencia = c.createStatement();
+		String consultaSql = "SELECT id FROM client;";
+
+		try {
+			
+			ResultSet rs = sentencia.executeQuery(consultaSql);
+			
+			while (rs.next()) {
+				
+				cli = rs.getString("id");
+				miLista.add(cli);
+				
+			}
+			
+			rs.close();
+			sentencia.close();
+			c.close();
+			
+		} catch (Exception e) {
+			
+			System.out.println("ERROR");
+			
+		}
+		
+		return miLista;
 		
 	}
 	

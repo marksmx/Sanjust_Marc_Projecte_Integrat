@@ -16,11 +16,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 
+import java.util.Scanner; 
 import DADES.*;
 import javax.swing.SwingConstants;
 
@@ -37,7 +39,7 @@ public class CrearUsuari {
 	public JFrame frame;
 	JButton button = new JButton("ACABAR I CONTINUAR");
 	private JTextField txtCrearUsuari;
-
+	private JPasswordField textPane_6 = new JPasswordField();
 
 	/** FUNCIÓ PER A CRIDAR A LA FUNCIÓ QUE COMPOSA ELS ELEMENTS DE LA PANTALLA I A LES FUNCIONS DE CONSTRUCCIÓ DE LA TAULA */
 
@@ -60,7 +62,7 @@ public class CrearUsuari {
 		frame.setResizable(false);
 		frame.getContentPane().setFocusable(false);
 		frame.getContentPane().setFocusTraversalKeysEnabled(false);
-		frame.setBounds(730, 300, 473, 461);
+		frame.setBounds(730, 300, 499, 461);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
         frame.setTitle("OnTime Agency App - v.2.0");
@@ -69,7 +71,7 @@ public class CrearUsuari {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(0, 0, 467, 82);
+		panel.setBounds(0, 0, 493, 82);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -109,8 +111,6 @@ public class CrearUsuari {
 		lblNewLabel.setIcon(new ImageIcon(CrearUsuari.class.getResource("/VISTA/img/logo.png")));
 		lblNewLabel.setBounds(0, 0, 102, 82);
 		panel.add(lblNewLabel);
-		
-		/** Fi del conjunt d'elements que composen la capçalera */
 		
 		JTextField textPane = new JTextField();
 		textPane.setHorizontalAlignment(SwingConstants.CENTER);
@@ -182,7 +182,6 @@ public class CrearUsuari {
 		textPane_5.setBounds(44, 223, 159, 35);
 		frame.getContentPane().add(textPane_5);
 		
-		JTextField textPane_6 = new JTextField();
 		textPane_6.setHorizontalAlignment(SwingConstants.CENTER);
 		textPane_6.setText("");
 		textPane_6.setForeground(Color.BLACK);
@@ -191,7 +190,36 @@ public class CrearUsuari {
 		textPane_6.setFocusCycleRoot(false);
 		textPane_6.setBackground(Color.WHITE);
 		textPane_6.setBounds(268, 223, 159, 35);
+		textPane_6.setEchoChar('*');
 		frame.getContentPane().add(textPane_6);
+
+		JTextPane textPane_1 = new JTextPane();
+		textPane_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				
+				textPane_6.setEchoChar((char)0);
+				textPane_1.setForeground(Color.GRAY);
+
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				
+				textPane_6.setEchoChar('*');
+				textPane_1.setForeground(Color.WHITE);
+				
+			}
+		});
+		textPane_1.setText("<o>");
+		textPane_1.setForeground(Color.WHITE);
+		textPane_1.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
+		textPane_1.setFocusable(false);
+		textPane_1.setFocusTraversalKeysEnabled(false);
+		textPane_1.setFocusCycleRoot(false);
+		textPane_1.setEditable(false);
+		textPane_1.setBackground(Color.BLACK);
+		textPane_1.setBounds(432, 223, 42, 35);
+		frame.getContentPane().add(textPane_1);
 		
 		JTextPane txtpnContrasenya = new JTextPane();
 		txtpnContrasenya.setText("CONTRASENYA");
@@ -306,5 +334,4 @@ public class CrearUsuari {
 		/** Fi codi botó "Acabar i Continuar" */
 		
 	}
-
 }

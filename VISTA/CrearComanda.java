@@ -296,7 +296,6 @@ public class CrearComanda {
 		JTextField textPane_2 = new JTextField();
 		textPane_2.setHorizontalAlignment(SwingConstants.CENTER);
 		textPane_2.setEditable(false);
-		textPane_2.setText("33");
 		textPane_2.setForeground(Color.BLACK);
 		textPane_2.setFont(new Font("Dialog", Font.PLAIN, 20));
 		textPane_2.setFocusTraversalKeysEnabled(false);
@@ -627,6 +626,15 @@ public class CrearComanda {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(20, 402, 227, 70);
 		frame.getContentPane().add(scrollPane);
+		scrollPane.setViewportView(textPane_6);
+		
+		textPane_6.setText("");
+		textPane_6.setForeground(Color.BLACK);
+		textPane_6.setFont(new Font("Dialog", Font.PLAIN, 13));
+		textPane_6.setFocusTraversalKeysEnabled(false);
+		textPane_6.setFocusCycleRoot(false);
+		textPane_6.setEditable(true);
+		textPane_6.setBackground(Color.WHITE);
 		
 		txtServei = new JTextField();
 		txtServei.setOpaque(false);
@@ -661,16 +669,6 @@ public class CrearComanda {
 		lblNewLabel_1.setBounds(0, 10, 612, 488);
 		frame.getContentPane().add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(CrearComanda.class.getResource("/VISTA/img/backg.png")));
-		textPane_6.setBounds(22, 394, 225, 68);
-		frame.getContentPane().add(textPane_6);
-		
-		textPane_6.setText("");
-		textPane_6.setForeground(Color.BLACK);
-		textPane_6.setFont(new Font("Dialog", Font.PLAIN, 13));
-		textPane_6.setFocusTraversalKeysEnabled(false);
-		textPane_6.setFocusCycleRoot(false);
-		textPane_6.setEditable(true);
-		textPane_6.setBackground(Color.WHITE);
 
 		for(int x=0; x<4; x++) {
 			

@@ -259,7 +259,7 @@ public class Client {
 		frame.setResizable(false);
 		frame.getContentPane().setFocusable(false);
 		frame.getContentPane().setFocusTraversalKeysEnabled(false);
-		frame.setBounds(730, 300, 1149, 468);
+		frame.setBounds(730, 300, 1149, 454);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
         frame.setTitle("OnTime Agency App - v.2.0");

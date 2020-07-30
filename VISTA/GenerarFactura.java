@@ -195,9 +195,6 @@ public class GenerarFactura {
 							int mesSel = calendar.getDate().getMonth()+1;
 							
 							if(miLista2.get(x).getEmpresa().equals(idEmpresa) && mesSel == Integer.parseInt(mesCom) && anySel == Integer.parseInt(anyCom)) {
-							
-								miLista2.get(x).getEmpresa();
-								miLista2.get(x).getData();
 								
 								for(int y=0; y < miLista3.size(); y++) {
 									
@@ -253,7 +250,7 @@ public class GenerarFactura {
 					Document doc = new Document();
 					PdfWriter.getInstance(doc, pdf);
 					doc.open();
-					String t = System.getProperty("user.dir")+"\\img\\pdfbase.png";
+					String t = System.getProperty("user.dir")+"\\src\\VISTA\\img\\pdfbase.png";
 					Image img = Image.getInstance(t);
 					img.setAbsolutePosition(0f, 0f);
 					Paragraph test = new Paragraph(contingut);
@@ -463,7 +460,7 @@ public class GenerarFactura {
 		public void actionPerformed(java.awt.event.ActionEvent e) {
 				
 				boolean totsIguals = false;
-				contador = 0;
+				//contador = 0;
 				int unitats = 1;
 				double total = 0;
 				String preuNum = "";
@@ -568,14 +565,12 @@ public class GenerarFactura {
 													
 													sqlF.crearLiniaFactura(textField_3.getText(), sqlP.consultarProducte(miLista.get(i).getIdProducte()), Integer.toString(sqlC.contarComandesPerProd(miLista.get(i).getIdProducte(), idEmpresa)) , miLista.get(i).getTotal(), Double.toString(finalLinia*sqlC.contarComandesPerProd(miLista.get(i).getIdProducte(), idEmpresa))+"€");
 													contingut += " "+textField_3.getText()+ " _________ " + sqlP.consultarProducte(miLista.get(i).getIdProducte()) + " ________ " + Integer.toString(sqlC.contarComandesPerProd(miLista.get(i).getIdProducte(), idEmpresa)) + " ________ "+ miLista.get(i).getTotal() + " _________ " + Double.toString(finalLinia*sqlC.contarComandesPerProd(miLista.get(i).getIdProducte(), idEmpresa))+"€" + " " +"\n";
+													System.out.println(contingut);
 													tope++;
 													
 												}
 												
-											} else {
-												
-											
-											}
+											} 
 											
 											++contador;
 											
@@ -617,7 +612,7 @@ public class GenerarFactura {
 											Document doc = new Document();
 											PdfWriter.getInstance(doc, pdf);
 											doc.open();
-											String t = System.getProperty("user.dir")+"\\img\\pdfbase.png";
+											String t = System.getProperty("user.dir")+"\\src\\VISTA\\img\\pdfbase.png";
 											Image img = Image.getInstance(t);
 											img.setAbsolutePosition(0f, 0f);
 	  										Paragraph test = new Paragraph(contingut);

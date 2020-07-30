@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
 
 import DADES.SQLClients;
+import MODEL.ClientCl;
 
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
@@ -156,7 +158,7 @@ public class EinesAdmin {
 					
 					/** En clicar el botó, s'eliminarà el client seleccionat */
 					
-					sqlCl.eliminarClient(Integer.toString(comboBox.getSelectedIndex()));
+					sqlCl.eliminarClient(comboBox.getSelectedItem().toString());
 					EinesAdmin frm = new EinesAdmin();
 					frm.frame.setVisible(true);
 					frame.setVisible(false);
@@ -242,14 +244,15 @@ public class EinesAdmin {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		try {
-			
+			ArrayList<String> miLista = sqlCl.consultarIDClient();
+
 			for(int i=0; i<=sqlCl.recompteClients()+1;i++) {
-				System.out.println(i);
+				
 				try {
 					if(sqlCl.consultarNomClient(Integer.toString(i)).equals(null)) {
 						
 					} else {
-						comboBox.addItem(sqlCl.consultarNomClient(Integer.toString(i)));
+						comboBox.addItem(miLista.get(i));
 					}
 				} catch (Exception e) {
 					

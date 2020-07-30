@@ -245,7 +245,7 @@ public class LogIn {
 				final String username = "marcsanjustmartinez@gmail.com";
 			    final String password = "IAmDedsec_27";
 			    Properties props = new Properties();
-			    
+
 			    props.put("mail.smtp.auth", "true");
 			    props.put("mail.smtp.starttls.enable", "true");
 			    props.put("mail.smtp.host", "smtp.gmail.com");
@@ -270,11 +270,16 @@ public class LogIn {
 			        transport.sendMessage(message, message.getAllRecipients());
 			        transport.close();
 			    	System.out.println("Correcto!");
-					JOptionPane.showMessageDialog(null, "S'ha enviat un correu amb la contrasenya a "+sqlU.mailUsuari(),"",JOptionPane.INFORMATION_MESSAGE);
-
+			    	JOptionPane.showMessageDialog(null, "S'ha enviat un correu amb la contrasenya a "+sqlU.mailUsuari(),"",JOptionPane.INFORMATION_MESSAGE);
+			    	
 			    } catch (MessagingException e) {
+			    	
+					JOptionPane.showMessageDialog(null, "No ","",JOptionPane.INFORMATION_MESSAGE);
 			    	throw new RuntimeException(e);
+
 			    } catch (SQLException e) {
+			    	
+					JOptionPane.showMessageDialog(null, "No ","",JOptionPane.INFORMATION_MESSAGE);
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

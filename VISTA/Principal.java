@@ -353,7 +353,7 @@ public class Principal {
 		txtpnGrficDeProjectes.setFocusCycleRoot(false);
 		txtpnGrficDeProjectes.setEditable(false);
 		txtpnGrficDeProjectes.setBackground(Color.BLACK);
-		txtpnGrficDeProjectes.setBounds(10, 110, 189, 25);
+		txtpnGrficDeProjectes.setBounds(10, 110, 205, 25);
 		frame.getContentPane().add(txtpnGrficDeProjectes);
 		
 		JPanel panel = new JPanel();
