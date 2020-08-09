@@ -242,8 +242,8 @@ public class LogIn {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				
-				final String username = "marcsanjustmartinez@gmail.com";
-			    final String password = "IAmDedsec_27";
+				final String username = "marcsanjustontime@gmail.com";
+			    final String password = "Passw0rd123!";
 			    Properties props = new Properties();
 
 			    props.put("mail.smtp.auth", "true");
@@ -274,12 +274,10 @@ public class LogIn {
 			    	
 			    } catch (MessagingException e) {
 			    	
-					JOptionPane.showMessageDialog(null, "No ","",JOptionPane.INFORMATION_MESSAGE);
 			    	throw new RuntimeException(e);
 
 			    } catch (SQLException e) {
 			    	
-					JOptionPane.showMessageDialog(null, "No ","",JOptionPane.INFORMATION_MESSAGE);
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
