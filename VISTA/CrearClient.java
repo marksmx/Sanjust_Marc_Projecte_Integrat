@@ -139,7 +139,7 @@ public class CrearClient {
 		
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setText("EMPRESA");
-		textPane_1.setForeground(Color.WHITE);
+		textPane_1.setForeground(Color.LIGHT_GRAY);
 		textPane_1.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		textPane_1.setFocusable(false);
 		textPane_1.setFocusTraversalKeysEnabled(false);
@@ -158,7 +158,7 @@ public class CrearClient {
 		
 		JTextPane textPane_3 = new JTextPane();
 		textPane_3.setText("CONCEPTE");
-		textPane_3.setForeground(Color.WHITE);
+		textPane_3.setForeground(Color.LIGHT_GRAY);
 		textPane_3.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		textPane_3.setFocusable(false);
 		textPane_3.setFocusTraversalKeysEnabled(false);
@@ -171,7 +171,7 @@ public class CrearClient {
 		JTextPane textPane_4 = new JTextPane();
 		textPane_4.setOpaque(false);
 		textPane_4.setText("NIF");
-		textPane_4.setForeground(Color.WHITE);
+		textPane_4.setForeground(Color.LIGHT_GRAY);
 		textPane_4.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		textPane_4.setFocusable(false);
 		textPane_4.setFocusTraversalKeysEnabled(false);
@@ -197,8 +197,9 @@ public class CrearClient {
 		frame.getContentPane().add(textPane_6);
 		
 		JTextPane textPane_7 = new JTextPane();
+		textPane_7.setOpaque(false);
 		textPane_7.setText("ID CLIENT");
-		textPane_7.setForeground(Color.WHITE);
+		textPane_7.setForeground(Color.LIGHT_GRAY);
 		textPane_7.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		textPane_7.setFocusable(false);
 		textPane_7.setFocusTraversalKeysEnabled(false);
@@ -217,7 +218,7 @@ public class CrearClient {
 		
 		JTextPane textPane_9 = new JTextPane();
 		textPane_9.setText("MAIL");
-		textPane_9.setForeground(Color.WHITE);
+		textPane_9.setForeground(Color.LIGHT_GRAY);
 		textPane_9.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		textPane_9.setFocusable(false);
 		textPane_9.setFocusTraversalKeysEnabled(false);
@@ -231,13 +232,13 @@ public class CrearClient {
 		/** Inici conjunt de codi dels botóns */
 		/** Inici del botó "Cancel·lar Operació" */
 		
-		button_1.setForeground(Color.BLACK);
+		button_1.setOpaque(false);
+		button_1.setForeground(Color.GRAY);
 		button_1.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_1.setBackground(Color.BLACK);
 				button_1.setForeground(Color.WHITE);
 				
 			}
@@ -245,8 +246,7 @@ public class CrearClient {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_1.setBackground(Color.WHITE);
-				button_1.setForeground(Color.BLACK);
+				button_1.setForeground(Color.GRAY);
 				
 			}
 			
@@ -291,13 +291,13 @@ public class CrearClient {
 		
 		/** Inici del botó "Afegir Client" */
 		
-		button.setForeground(Color.BLACK);
+		button.setForeground(Color.GRAY);
+		button.setOpaque(false);
 		button.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button.setBackground(Color.BLACK);
 				button.setForeground(Color.WHITE);
 				
 			}
@@ -305,8 +305,7 @@ public class CrearClient {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button.setBackground(Color.WHITE);
-				button.setForeground(Color.BLACK);
+				button.setForeground(Color.GRAY);
 				
 			}
 			
@@ -374,7 +373,7 @@ public class CrearClient {
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon(CrearClient.class.getResource("/VISTA/img/backg.png")));
-		lblNewLabel_1.setBounds(0, 0, 467, 486);
+		lblNewLabel_1.setBounds(-42, 82, 509, 404);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 	

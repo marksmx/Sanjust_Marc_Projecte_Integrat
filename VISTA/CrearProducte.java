@@ -141,14 +141,14 @@ public class CrearProducte {
 		
 		JTextPane txtpnElement = new JTextPane();
 		txtpnElement.setText("ELEMENT\r\n");
-		txtpnElement.setForeground(Color.WHITE);
+		txtpnElement.setForeground(Color.LIGHT_GRAY);
 		txtpnElement.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnElement.setFocusable(false);
 		txtpnElement.setFocusTraversalKeysEnabled(false);
 		txtpnElement.setFocusCycleRoot(false);
 		txtpnElement.setEditable(false);
 		txtpnElement.setBackground(Color.BLACK);
-		txtpnElement.setBounds(337, 93, 115, 42);
+		txtpnElement.setBounds(348, 93, 115, 42);
 		frame.getContentPane().add(txtpnElement);
 		
 		JTextField textPane_2 = new JTextField();
@@ -165,7 +165,7 @@ public class CrearProducte {
 		
 		JTextPane txtpnFreqncia = new JTextPane();
 		txtpnFreqncia.setText("FREQ\u00DC\u00C8NCIA");
-		txtpnFreqncia.setForeground(Color.WHITE);
+		txtpnFreqncia.setForeground(Color.LIGHT_GRAY);
 		txtpnFreqncia.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnFreqncia.setFocusable(false);
 		txtpnFreqncia.setFocusTraversalKeysEnabled(false);
@@ -177,14 +177,14 @@ public class CrearProducte {
 		
 		JTextPane txtpnUnitats = new JTextPane();
 		txtpnUnitats.setText("UNITATS");
-		txtpnUnitats.setForeground(Color.WHITE);
+		txtpnUnitats.setForeground(Color.LIGHT_GRAY);
 		txtpnUnitats.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnUnitats.setFocusable(false);
 		txtpnUnitats.setFocusTraversalKeysEnabled(false);
 		txtpnUnitats.setFocusCycleRoot(false);
 		txtpnUnitats.setEditable(false);
 		txtpnUnitats.setBackground(Color.BLACK);
-		txtpnUnitats.setBounds(349, 201, 101, 42);
+		txtpnUnitats.setBounds(348, 201, 115, 42);
 		frame.getContentPane().add(txtpnUnitats);
 		
 		JTextField textPane_5 = new JTextField();
@@ -214,7 +214,7 @@ public class CrearProducte {
 		
 		JTextPane txtpnIdElement = new JTextPane();
 		txtpnIdElement.setText("ID ELEMENT");
-		txtpnIdElement.setForeground(Color.WHITE);
+		txtpnIdElement.setForeground(Color.LIGHT_GRAY);
 		txtpnIdElement.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnIdElement.setFocusable(false);
 		txtpnIdElement.setFocusTraversalKeysEnabled(false);
@@ -238,7 +238,7 @@ public class CrearProducte {
 		
 		JTextPane txtpnBase = new JTextPane();
 		txtpnBase.setText("BASE");
-		txtpnBase.setForeground(Color.WHITE);
+		txtpnBase.setForeground(Color.LIGHT_GRAY);
 		txtpnBase.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnBase.setFocusable(false);
 		txtpnBase.setFocusTraversalKeysEnabled(false);
@@ -250,7 +250,7 @@ public class CrearProducte {
 		
 		JTextPane textPane_10 = new JTextPane();
 		textPane_10.setText("IVA");
-		textPane_10.setForeground(Color.WHITE);
+		textPane_10.setForeground(Color.LIGHT_GRAY);
 		textPane_10.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		textPane_10.setFocusable(false);
 		textPane_10.setFocusTraversalKeysEnabled(false);
@@ -286,7 +286,7 @@ public class CrearProducte {
 		
 		JTextPane txtpnTotal = new JTextPane();
 		txtpnTotal.setText("TOTAL");
-		txtpnTotal.setForeground(Color.WHITE);
+		txtpnTotal.setForeground(Color.LIGHT_GRAY);
 		txtpnTotal.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnTotal.setFocusable(false);
 		txtpnTotal.setFocusTraversalKeysEnabled(false);
@@ -299,14 +299,15 @@ public class CrearProducte {
 		
 		/** Inici conjunt codi botons */
 		/** Inici botó "Tornar a Inici" */
+		button_2.setBackground(Color.WHITE);
 		
-		button_2.setForeground(Color.BLACK);
+		button_2.setForeground(Color.GRAY);
+		button_2.setOpaque(false);
 		button_2.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_2.setBackground(Color.BLACK);
 				button_2.setForeground(Color.WHITE);
 				
 			}
@@ -314,8 +315,7 @@ public class CrearProducte {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_2.setBackground(Color.WHITE);
-				button_2.setForeground(Color.BLACK);
+				button_2.setForeground(Color.GRAY);
 				
 			}
 			
@@ -343,11 +343,9 @@ public class CrearProducte {
 			
 		});
 		
-		button_2.setForeground(Color.BLACK);
 		button_2.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		button_2.setFocusPainted(false);
 		button_2.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		button_2.setBackground(Color.WHITE);
 		button_2.setBounds(50, 352, 146, 35);
 		frame.getContentPane().add(button_2);
 		
@@ -355,14 +353,15 @@ public class CrearProducte {
 
 		
 		/** Inici botó "Cancel·lar Operació" */
-
-		button_3.setForeground(Color.BLACK);
+		button_3.setBackground(Color.WHITE);
+		
+		button_3.setOpaque(false);
+		button_3.setForeground(Color.GRAY);
 		button_3.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_3.setBackground(Color.BLACK);
 				button_3.setForeground(Color.WHITE);
 				
 			}
@@ -370,8 +369,7 @@ public class CrearProducte {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_3.setBackground(Color.WHITE);
-				button_3.setForeground(Color.BLACK);
+				button_3.setForeground(Color.GRAY);
 				
 			}
 			
@@ -404,11 +402,9 @@ public class CrearProducte {
 			
 		});
 		
-		button_3.setForeground(Color.BLACK);
 		button_3.setFont(new Font("HelveticaNeue", Font.BOLD, 10));
 		button_3.setFocusPainted(false);
 		button_3.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		button_3.setBackground(Color.WHITE);
 		button_3.setBounds(50, 309, 146, 35);
 		frame.getContentPane().add(button_3);
 		
@@ -416,15 +412,15 @@ public class CrearProducte {
 
 
 		/** Inici botó "Crear Producte" */
+		button.setBackground(Color.WHITE);
 		button.setToolTipText("Crea un Producte nou");
-
-		button.setForeground(Color.BLACK);
+		button.setOpaque(false);
+		button.setForeground(Color.GRAY);
 		button.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button.setBackground(Color.BLACK);
 				button.setForeground(Color.WHITE);
 				
 			}
@@ -432,8 +428,7 @@ public class CrearProducte {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button.setBackground(Color.WHITE);
-				button.setForeground(Color.BLACK);
+				button.setForeground(Color.GRAY);
 				
 			}
 			
@@ -442,7 +437,6 @@ public class CrearProducte {
 		button.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		button.setFocusPainted(false);
 		button.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		button.setBackground(Color.WHITE);
 		button.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		button.addActionListener(new ActionListener() {
 			
@@ -477,15 +471,15 @@ public class CrearProducte {
 
 		
 		/** Inici botó "Crear Servei" */
+		button_1.setBackground(Color.WHITE);
 		button_1.setToolTipText("Crea un Servei nou");
-
-		button_1.setForeground(Color.BLACK);
+		button_1.setOpaque(false);
+		button_1.setForeground(Color.GRAY);
 		button_1.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_1.setBackground(Color.BLACK);
 				button_1.setForeground(Color.WHITE);
 				
 			}
@@ -493,8 +487,7 @@ public class CrearProducte {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_1.setBackground(Color.WHITE);
-				button_1.setForeground(Color.BLACK);
+				button_1.setForeground(Color.GRAY);
 				
 			}
 			
@@ -503,7 +496,6 @@ public class CrearProducte {
 		button_1.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		button_1.setFocusPainted(false);
 		button_1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		button_1.setBackground(Color.WHITE);
 		button_1.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		button_1.addActionListener(new ActionListener() {
 			
@@ -540,15 +532,15 @@ public class CrearProducte {
 
 		
 		/** Inici botó "Crear" */
+		button_4.setBackground(Color.WHITE);
 		button_4.setToolTipText("Afegeix el Producte o Servei a la llista");
-
-		button_4.setForeground(Color.BLACK);
+		button_4.setOpaque(false);
+		button_4.setForeground(Color.GRAY);
 		button_4.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_4.setBackground(Color.BLACK);
 				button_4.setForeground(Color.WHITE);
 				
 			}
@@ -556,8 +548,7 @@ public class CrearProducte {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_4.setBackground(Color.WHITE);
-				button_4.setForeground(Color.BLACK);
+				button_4.setForeground(Color.GRAY);
 				
 			}
 			
@@ -628,11 +619,9 @@ public class CrearProducte {
 		});
 		
 		button_4.setVisible(false);
-		button_4.setForeground(Color.BLACK);
 		button_4.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		button_4.setFocusPainted(false);
 		button_4.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		button_4.setBackground(Color.WHITE);
 		button_4.setBounds(50, 188, 146, 35);
 		frame.getContentPane().add(button_4);
 		
@@ -640,15 +629,15 @@ public class CrearProducte {
 
 		
 		/** Inici botó "Calcular Preu" */
+		button_5.setBackground(Color.WHITE);
 		button_5.setToolTipText("Calcula el IVA i el total a partir del preu base");
-
-		button_5.setForeground(Color.BLACK);
+		button_5.setOpaque(false);
+		button_5.setForeground(Color.GRAY);
 		button_5.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_5.setBackground(Color.BLACK);
 				button_5.setForeground(Color.WHITE);
 				
 			}
@@ -656,8 +645,7 @@ public class CrearProducte {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_5.setBackground(Color.WHITE);
-				button_5.setForeground(Color.BLACK);
+				button_5.setForeground(Color.GRAY);
 				
 			}
 			
@@ -694,17 +682,15 @@ public class CrearProducte {
 			
 		});
 		
-		button_5.setForeground(Color.BLACK);
 		button_5.setFont(new Font("HelveticaNeue", Font.BOLD, 10));
 		button_5.setFocusPainted(false);
 		button_5.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		button_5.setBackground(Color.WHITE);
 		button_5.setBounds(224, 352, 115, 35);
 		frame.getContentPane().add(button_5);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(CrearProducte.class.getResource("/VISTA/img/backg.png")));
-		lblNewLabel_1.setBounds(0, -28, 813, 459);
+		lblNewLabel_1.setBounds(137, -55, 524, 475);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		/** Fi botó "Calcular Preu" */

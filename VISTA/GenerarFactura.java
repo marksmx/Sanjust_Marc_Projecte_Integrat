@@ -138,13 +138,13 @@ public class GenerarFactura {
 		
 		JButton btnNewButton = new JButton("RECUPERAR FACTURA");
 		btnNewButton.setVisible(true);
-		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setOpaque(false);
+		btnNewButton.setForeground(Color.GRAY);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton.setBackground(Color.BLACK);
 				btnNewButton.setForeground(Color.WHITE);
 				
 			}
@@ -152,8 +152,7 @@ public class GenerarFactura {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton.setBackground(Color.WHITE);
-				btnNewButton.setForeground(Color.BLACK);
+				btnNewButton.setForeground(Color.GRAY);
 				
 			}
 			
@@ -244,7 +243,8 @@ public class GenerarFactura {
 					preuFinal = Math.round(preuFinal * 100);
 					preuFinal = preuFinal/100;
 					contingut += ""+"\n";
-					contingut += "Total: "+ preuFinal +" €";
+					contingut += "Total: "+"\n";
+					contingut += preuFinal +" €";
 					
 					FileOutputStream pdf = new FileOutputStream(ruta+".pdf");
 					Document doc = new Document();
@@ -285,7 +285,7 @@ public class GenerarFactura {
 		txtARecuperar.setSelectionColor(Color.GRAY);
 		txtARecuperar.setOpaque(false);
 		txtARecuperar.setHorizontalAlignment(SwingConstants.CENTER);
-		txtARecuperar.setForeground(Color.WHITE);
+		txtARecuperar.setForeground(Color.LIGHT_GRAY);
 		txtARecuperar.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
 		txtARecuperar.setFocusable(false);
 		txtARecuperar.setFocusTraversalKeysEnabled(false);
@@ -302,7 +302,7 @@ public class GenerarFactura {
 		txtMesARecuperar.setSelectionColor(Color.GRAY);
 		txtMesARecuperar.setOpaque(false);
 		txtMesARecuperar.setHorizontalAlignment(SwingConstants.CENTER);
-		txtMesARecuperar.setForeground(Color.WHITE);
+		txtMesARecuperar.setForeground(Color.LIGHT_GRAY);
 		txtMesARecuperar.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
 		txtMesARecuperar.setFocusable(false);
 		txtMesARecuperar.setFocusTraversalKeysEnabled(false);
@@ -392,7 +392,7 @@ public class GenerarFactura {
 		txtMesAFacturar.setHorizontalAlignment(SwingConstants.CENTER);
 		txtMesAFacturar.setText("MES A FACTURAR");
 		txtMesAFacturar.setSelectionColor(Color.GRAY);
-		txtMesAFacturar.setForeground(Color.WHITE);
+		txtMesAFacturar.setForeground(Color.LIGHT_GRAY);
 		txtMesAFacturar.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
 		txtMesAFacturar.setFocusable(false);
 		txtMesAFacturar.setFocusTraversalKeysEnabled(false);
@@ -429,13 +429,13 @@ public class GenerarFactura {
 		/** Inici botó "Generar Factura" */
 		
 		btnNewButton_1.setVisible(true);
-		btnNewButton_1.setForeground(Color.BLACK);
+		btnNewButton_1.setOpaque(false);
+		btnNewButton_1.setForeground(Color.GRAY);
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton_1.setBackground(Color.BLACK);
 				btnNewButton_1.setForeground(Color.WHITE);
 				
 			}
@@ -443,8 +443,7 @@ public class GenerarFactura {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton_1.setBackground(Color.WHITE);
-				btnNewButton_1.setForeground(Color.BLACK);
+				btnNewButton_1.setForeground(Color.GRAY);
 				
 			}
 			
@@ -602,8 +601,8 @@ public class GenerarFactura {
 												contingut += ""+"\n";
 												preuFinal = Math.round(preuFinal * 100);
 												preuFinal = preuFinal/100;
-												contingut += "Total: "+ preuFinal +" €";
-												
+												contingut += "Total: "+"\n";
+												contingut += preuFinal +" €";												
 											
 												
 											}
@@ -657,13 +656,13 @@ public class GenerarFactura {
 		/** Inici botó "Tornar a Inici" */
 
 		btnNewButton_2.setVisible(true);
-		btnNewButton_2.setForeground(Color.BLACK);
+		btnNewButton_2.setOpaque(false);
+		btnNewButton_2.setForeground(Color.GRAY);
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton_2.setBackground(Color.BLACK);
 				btnNewButton_2.setForeground(Color.WHITE);
 				
 			}
@@ -671,8 +670,7 @@ public class GenerarFactura {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton_2.setBackground(Color.WHITE);
-				btnNewButton_2.setForeground(Color.BLACK);
+				btnNewButton_2.setForeground(Color.GRAY);
 				
 			}
 			
@@ -718,7 +716,7 @@ public class GenerarFactura {
 		txtNmeroDeComanda.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNmeroDeComanda.setText("N\u00DAMERO DE COMANDA");
 		txtNmeroDeComanda.setSelectionColor(Color.GRAY);
-		txtNmeroDeComanda.setForeground(Color.WHITE);
+		txtNmeroDeComanda.setForeground(Color.LIGHT_GRAY);
 		txtNmeroDeComanda.setFont(new Font("HelveticaNeue", Font.PLAIN, 16));
 		txtNmeroDeComanda.setFocusable(false);
 		txtNmeroDeComanda.setFocusTraversalKeysEnabled(false);
@@ -732,7 +730,7 @@ public class GenerarFactura {
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon(GenerarFactura.class.getResource("/VISTA/img/backg.png")));
-		lblNewLabel_1.setBounds(0, -76, 511, 471);
+		lblNewLabel_1.setBounds(0, 133, 511, 372);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 	}

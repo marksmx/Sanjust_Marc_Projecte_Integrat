@@ -107,14 +107,15 @@ public class CrearComanda {
 
         
 		/** Inici conjunt de codi dels botons de designació de data límit */
+        btnAsignarDataLmit.setBackground(Color.WHITE);
         
-        btnAsignarDataLmit.setForeground(Color.BLACK);
+        btnAsignarDataLmit.setOpaque(false);
+        btnAsignarDataLmit.setForeground(Color.GRAY);
         btnAsignarDataLmit.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnAsignarDataLmit.setBackground(Color.BLACK);
 				btnAsignarDataLmit.setForeground(Color.WHITE);
 				
 			}
@@ -122,8 +123,7 @@ public class CrearComanda {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnAsignarDataLmit.setBackground(Color.WHITE);
-				btnAsignarDataLmit.setForeground(Color.BLACK);
+				btnAsignarDataLmit.setForeground(Color.GRAY);
 				
 			}
 			
@@ -141,14 +141,20 @@ public class CrearComanda {
 			}
 		});
 		
+		btnAsignarDataLmit.setFont(new Font("HelveticaNeue", Font.BOLD, 15));
+		btnAsignarDataLmit.setFocusPainted(false);
+		btnAsignarDataLmit.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
+		btnAsignarDataLmit.setBounds(304, 308, 279, 30);
+		frame.getContentPane().add(btnAsignarDataLmit);
+		btnSenseDataLmit.setBackground(Color.WHITE);
 		
-		btnSenseDataLmit.setForeground(Color.BLACK);
+		btnSenseDataLmit.setOpaque(false);
+		btnSenseDataLmit.setForeground(Color.GRAY);
 		btnSenseDataLmit.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnSenseDataLmit.setBackground(Color.BLACK);
 				btnSenseDataLmit.setForeground(Color.WHITE);
 				
 			}
@@ -156,8 +162,7 @@ public class CrearComanda {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnSenseDataLmit.setBackground(Color.WHITE);
-				btnSenseDataLmit.setForeground(Color.BLACK);
+				btnSenseDataLmit.setForeground(Color.GRAY);
 				
 			}
 			
@@ -168,20 +173,11 @@ public class CrearComanda {
 				dLimit = "Sense data límit";
 			}
 		});
-		btnSenseDataLmit.setForeground(Color.BLACK);
 		btnSenseDataLmit.setFont(new Font("HelveticaNeue", Font.BOLD, 15));
 		btnSenseDataLmit.setFocusPainted(false);
 		btnSenseDataLmit.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		btnSenseDataLmit.setBackground(Color.WHITE);
 		btnSenseDataLmit.setBounds(304, 338, 279, 30);
 		frame.getContentPane().add(btnSenseDataLmit);
-		btnAsignarDataLmit.setForeground(Color.BLACK);
-		btnAsignarDataLmit.setFont(new Font("HelveticaNeue", Font.BOLD, 15));
-		btnAsignarDataLmit.setFocusPainted(false);
-		btnAsignarDataLmit.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		btnAsignarDataLmit.setBackground(Color.WHITE);
-		btnAsignarDataLmit.setBounds(304, 308, 279, 30);
-		frame.getContentPane().add(btnAsignarDataLmit);
 		
 		/** Fi conjunt de codi dels botons de designació de data límit */
 
@@ -211,7 +207,7 @@ public class CrearComanda {
 		txtAfegir.setOpaque(false);
 		txtAfegir.setText("AFEGIR");
 		txtAfegir.setHorizontalAlignment(SwingConstants.CENTER);
-		txtAfegir.setForeground(Color.WHITE);
+		txtAfegir.setForeground(Color.LIGHT_GRAY);
 		txtAfegir.setFont(new Font("HelveticaNeue", Font.PLAIN, 24));
 		txtAfegir.setFocusable(false);
 		txtAfegir.setFocusTraversalKeysEnabled(false);
@@ -227,7 +223,7 @@ public class CrearComanda {
 		textPane_1.setBorder(null);
 		textPane_1.setHorizontalAlignment(SwingConstants.CENTER);
 		textPane_1.setText("AFEGIR\r\n");
-		textPane_1.setForeground(SystemColor.text);
+		textPane_1.setForeground(Color.LIGHT_GRAY);
 		textPane_1.setFont(new Font("HelveticaNeue", Font.PLAIN, 25));
 		textPane_1.setFocusable(false);
 		textPane_1.setFocusTraversalKeysEnabled(false);
@@ -242,7 +238,7 @@ public class CrearComanda {
 		txtProducte.setBorder(null);
 		txtProducte.setText("PRODUCTE\r\n");
 		txtProducte.setHorizontalAlignment(SwingConstants.CENTER);
-		txtProducte.setForeground(Color.WHITE);
+		txtProducte.setForeground(Color.LIGHT_GRAY);
 		txtProducte.setFont(new Font("HelveticaNeue", Font.PLAIN, 17));
 		txtProducte.setFocusable(false);
 		txtProducte.setFocusTraversalKeysEnabled(false);
@@ -306,7 +302,7 @@ public class CrearComanda {
 		
 		JTextPane txtpnCostTotal = new JTextPane();
 		txtpnCostTotal.setText("COST TOTAL");
-		txtpnCostTotal.setForeground(Color.WHITE);
+		txtpnCostTotal.setForeground(Color.LIGHT_GRAY);
 		txtpnCostTotal.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
 		txtpnCostTotal.setFocusable(false);
 		txtpnCostTotal.setFocusTraversalKeysEnabled(false);
@@ -349,14 +345,15 @@ public class CrearComanda {
 
 
 		/** Inici botó "Tornar Enrere" */
+		button_1.setBackground(Color.WHITE);
 		
-		button_1.setForeground(Color.BLACK);
+		button_1.setForeground(Color.GRAY);
+		button_1.setOpaque(false);
 		button_1.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_1.setBackground(Color.BLACK);
 				button_1.setForeground(Color.WHITE);
 				
 			}
@@ -364,8 +361,7 @@ public class CrearComanda {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_1.setBackground(Color.WHITE);
-				button_1.setForeground(Color.BLACK);
+				button_1.setForeground(Color.GRAY);
 				
 			}
 			
@@ -374,7 +370,6 @@ public class CrearComanda {
 		button_1.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		button_1.setFocusPainted(false);
 		button_1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		button_1.setBackground(Color.WHITE);
 		button_1.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		button_1.addActionListener(new ActionListener() {
 			
@@ -409,15 +404,15 @@ public class CrearComanda {
 
 		
 		/** Inici botó "Validar Comanda" */
+		button.setBackground(Color.WHITE);
 		button.setToolTipText("Comprova la validesa de la comanda i calcula el preu");
-
-		button.setForeground(Color.BLACK);
+		button.setOpaque(false);
+		button.setForeground(Color.GRAY);
 		button.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button.setBackground(Color.BLACK);
 				button.setForeground(Color.WHITE);
 				
 			}
@@ -425,8 +420,7 @@ public class CrearComanda {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button.setBackground(Color.WHITE);
-				button.setForeground(Color.BLACK);
+				button.setForeground(Color.GRAY);
 				
 			}
 			
@@ -435,7 +429,6 @@ public class CrearComanda {
 		button.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		button.setFocusPainted(false);
 		button.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		button.setBackground(Color.WHITE);
 		button.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		button.addActionListener(new ActionListener() {
 			
@@ -487,16 +480,16 @@ public class CrearComanda {
 
 
 		/** Inici botó "Finalitzar Comanda" */
+		button2.setBackground(Color.WHITE);
 		button2.setToolTipText("Afegeix la comanda a la llista");
-		
+		button2.setOpaque(false);
 		button2.setVisible(false);
-		button2.setForeground(Color.BLACK);
+		button2.setForeground(Color.GRAY);
 		button2.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button2.setBackground(Color.BLACK);
 				button2.setForeground(Color.WHITE);
 				
 			}
@@ -504,8 +497,7 @@ public class CrearComanda {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button2.setBackground(Color.WHITE);
-				button2.setForeground(Color.BLACK);
+				button2.setForeground(Color.GRAY);
 				
 			}
 			
@@ -514,7 +506,6 @@ public class CrearComanda {
 		button2.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		button2.setFocusPainted(false);
 		button2.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		button2.setBackground(Color.WHITE);
 		button2.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		
 		button2.addActionListener(new ActionListener() {
@@ -600,7 +591,7 @@ public class CrearComanda {
 		txtpnDataLmit.setBorder(null);
 		txtpnDataLmit.setHorizontalAlignment(SwingConstants.CENTER);
 		txtpnDataLmit.setText("DATA L\u00CDMIT");
-		txtpnDataLmit.setForeground(Color.WHITE);
+		txtpnDataLmit.setForeground(Color.LIGHT_GRAY);
 		txtpnDataLmit.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnDataLmit.setFocusable(false);
 		txtpnDataLmit.setFocusTraversalKeysEnabled(false);
@@ -613,7 +604,7 @@ public class CrearComanda {
 		JTextPane txtpnDescripciComanda = new JTextPane();
 		txtpnDescripciComanda.setOpaque(false);
 		txtpnDescripciComanda.setText("DESCRIPCI\u00D3 COMANDA");
-		txtpnDescripciComanda.setForeground(Color.WHITE);
+		txtpnDescripciComanda.setForeground(Color.LIGHT_GRAY);
 		txtpnDescripciComanda.setFont(new Font("HelveticaNeue", Font.PLAIN, 19));
 		txtpnDescripciComanda.setFocusable(false);
 		txtpnDescripciComanda.setFocusTraversalKeysEnabled(false);
@@ -640,7 +631,7 @@ public class CrearComanda {
 		txtServei.setOpaque(false);
 		txtServei.setText("SERVEI");
 		txtServei.setHorizontalAlignment(SwingConstants.CENTER);
-		txtServei.setForeground(Color.WHITE);
+		txtServei.setForeground(Color.LIGHT_GRAY);
 		txtServei.setFont(new Font("HelveticaNeue", Font.PLAIN, 23));
 		txtServei.setFocusable(false);
 		txtServei.setFocusTraversalKeysEnabled(false);
@@ -666,7 +657,7 @@ public class CrearComanda {
 		
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(0, 10, 612, 488);
+		lblNewLabel_1.setBounds(0, 67, 612, 341);
 		frame.getContentPane().add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(CrearComanda.class.getResource("/VISTA/img/backg.png")));
 

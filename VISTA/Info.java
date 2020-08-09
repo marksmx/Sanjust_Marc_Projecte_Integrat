@@ -40,7 +40,6 @@ public class Info {
 	/** DECLARACIÓ GLOBAL D'ALGUNES VARIABLES */
 
 	private String idClient;
-	private JLabel lblNewLabel;
 	
 	
 	/** FUNCIÓ PER A CRIDAR A LA FUNCIÓ QUE COMPOSA ELS ELEMENTS DE LA PANTALLA I A LES FUNCIONS DE CONSTRUCCIÓ DE LA TAULA */
@@ -183,11 +182,6 @@ public class Info {
 		textField_7.setAutoscrolls(false);
 		textField_7.setBounds(268, 120, 216, 41);
 		frame.getContentPane().add(textField_7);
-		
-		lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Info.class.getResource("/VISTA/img/backg.png")));
-		lblNewLabel.setBounds(0, 37, 494, 271);
-		frame.getContentPane().add(lblNewLabel);
 		
 	}
 	

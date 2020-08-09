@@ -123,14 +123,14 @@ public class EinesAdmin {
 		
 		/** Inici conjunt de codi botons */
 		/** Inici codi botó "Eliminar Client" */
-
-		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setOpaque(false);
+		btnNewButton.setForeground(Color.GRAY);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton.setBackground(Color.BLACK);
 				btnNewButton.setForeground(Color.WHITE);
 				
 			}
@@ -138,8 +138,7 @@ public class EinesAdmin {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton.setBackground(Color.WHITE);
-				btnNewButton.setForeground(Color.BLACK);
+				btnNewButton.setForeground(Color.GRAY);
 				
 			}
 			
@@ -148,7 +147,6 @@ public class EinesAdmin {
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		btnNewButton.setFocusPainted(false);
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setFont(new Font("HelveticaNeue", Font.BOLD, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			
@@ -180,14 +178,15 @@ public class EinesAdmin {
 
 		
 		/** Inici codi botó "Tornar al Inici" */
+		button_1.setBackground(Color.WHITE);
 
-		button_1.setForeground(Color.BLACK);
+		button_1.setOpaque(false);
+		button_1.setForeground(Color.GRAY);
 		button_1.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_1.setBackground(Color.BLACK);
 				button_1.setForeground(Color.WHITE);
 				
 			}
@@ -195,8 +194,7 @@ public class EinesAdmin {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_1.setBackground(Color.WHITE);
-				button_1.setForeground(Color.BLACK);
+				button_1.setForeground(Color.GRAY);
 				
 			}
 			
@@ -223,24 +221,23 @@ public class EinesAdmin {
 			
 		});
 		
-		button_1.setForeground(Color.BLACK);
 		button_1.setFont(new Font("HelveticaNeue", Font.BOLD, 16));
 		button_1.setFocusPainted(false);
 		button_1.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(121, 234, 219, 41);
 		frame.getContentPane().add(button_1);
 		
 		comboBox.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		comboBox.setBackground(Color.WHITE);
-		comboBox.setForeground(Color.BLACK);
+		comboBox.setBackground(Color.BLACK);
+		comboBox.setForeground(Color.GRAY);
 		comboBox.setBounds(121, 112, 219, 35);
 		frame.getContentPane().add(comboBox);
 		comboBox.addItem("");
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBackground(Color.WHITE);
 		lblNewLabel_1.setIcon(new ImageIcon(EinesAdmin.class.getResource("/VISTA/img/backg.png")));
-		lblNewLabel_1.setBounds(0, 0, 395, 308);
+		lblNewLabel_1.setBounds(-24, 0, 478, 308);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		try {

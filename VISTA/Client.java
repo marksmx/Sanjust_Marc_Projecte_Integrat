@@ -235,7 +235,7 @@ public class Client {
 		txtClient.setFont(new Font("HelveticaNeue", Font.PLAIN, 25));
 		txtClient.setBorder(null);
 		txtClient.setBackground(Color.BLACK);
-		txtClient.setForeground(Color.WHITE);
+		txtClient.setForeground(Color.LIGHT_GRAY);
 		txtClient.setText("Client:");
 		txtClient.setBounds(303, 89, 78, 37);
 		txtClient.setColumns(10);
@@ -356,24 +356,23 @@ public class Client {
 		/** Fi del botó "Afegir Comanda" */
 
 		/** Inici del botó "Calcular Cost Total" */
+		button4.setOpaque(false);
 		button4.setToolTipText("Calcula el cost total de la comanda");
 		
-		button4.setForeground(Color.BLACK);
+		button4.setForeground(Color.GRAY);
 		button4.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button4.setBackground(Color.BLACK);
-				button4.setForeground(Color.WHITE);
+				button4.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button4.setBackground(Color.WHITE);
-				button4.setForeground(Color.BLACK);
+				button4.setForeground(Color.GRAY);
 				
 			}
 			
@@ -409,25 +408,24 @@ public class Client {
 		
 		button4.setBounds(0, 158, 210, 51);
 		frame.getContentPane().add(button4);
+		
+		button5.setOpaque(false);
 		button5.setToolTipText("Marcar la Comanda com a Pagada");
 		
-		
-		button5.setForeground(Color.BLACK);
+		button5.setForeground(Color.GRAY);
 		button5.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button5.setBackground(Color.BLACK);
-				button5.setForeground(Color.WHITE);
+				button5.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button5.setBackground(Color.WHITE);
-				button5.setForeground(Color.BLACK);
+				button5.setForeground(Color.GRAY);
 				
 			}
 			
@@ -463,58 +461,6 @@ public class Client {
 		button5.setBounds(0, 282, 210, 51);
 		frame.getContentPane().add(button5);
 		
-	/*	
-		button_4.setForeground(Color.BLACK);
-		button_4.addMouseListener(new MouseAdapter() {
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				
-				button_4.setBackground(Color.BLACK);
-				button_4.setForeground(Color.WHITE);
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				
-				button_4.setBackground(Color.WHITE);
-				button_4.setForeground(Color.BLACK);
-				
-			}
-			
-		});
-		
-		button_4.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		button_4.setVisible(false);
-		button_4.setFocusPainted(false);
-		button_4.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		button_4.setBackground(Color.WHITE);
-		button_4.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
-		button_4.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				
-				try {
-					
-					sqlC.modificarPagament(table.getModel().getValueAt(table.getSelectedRow(), 6).toString());
-					Client frm = new Client(idEmpresa);
-					frm.frame.setVisible(true);
-					frame.setVisible(false);
-					
-				} catch (ClassNotFoundException | SQLException e1) {
-					
-					e1.printStackTrace();
-					
-				}
-				
-			}
-			
-		});
-		
-		button_4.setBounds(76, 329, 190, 51);
-		frame.getContentPane().add(button_4);
-		*/
 		/** Fi del botó "Calcular Cost Total" */
 
 		
@@ -541,25 +487,24 @@ public class Client {
 		
 		/** Inici del conjun de codi que composa als botons de tractament de comanda */
 		/** Inici del botó "Eliminar Projecte" */
+		btnNewButton_1.setOpaque(false);
 		btnNewButton_1.setToolTipText("Elimina la comanda de forma definitiva");
 		
 		btnNewButton_1.setVisible(false);
-		btnNewButton_1.setForeground(Color.BLACK);
+		btnNewButton_1.setForeground(Color.GRAY);
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton_1.setBackground(Color.BLACK);
-				btnNewButton_1.setForeground(Color.WHITE);
+				btnNewButton_1.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton_1.setBackground(Color.WHITE);
-				btnNewButton_1.setForeground(Color.BLACK);
+				btnNewButton_1.setForeground(Color.GRAY);
 				
 			}
 			
@@ -607,24 +552,22 @@ public class Client {
 		
 		/** Inici del botó "Anular Projecte" */
 		btnNewButton_2.setToolTipText("Cancel\u00B7lar la comanda (amb possibilitat de recuperar-la)");
-		
+		btnNewButton_2.setOpaque(false);
 		btnNewButton_2.setVisible(false);
-		btnNewButton_2.setForeground(Color.BLACK);
+		btnNewButton_2.setForeground(Color.GRAY);
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton_2.setBackground(Color.BLACK);
-				btnNewButton_2.setForeground(Color.WHITE);
+				btnNewButton_2.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton_2.setBackground(Color.WHITE);
-				btnNewButton_2.setForeground(Color.BLACK);
+				btnNewButton_2.setForeground(Color.GRAY);
 				
 			}
 			
@@ -672,24 +615,22 @@ public class Client {
 		
 		/** Inici del botó "Recuperar Projecte" */
 		btnNewButton_3.setToolTipText("Recupera una Comanda Anul\u00B7lada");
-
+		btnNewButton_3.setOpaque(false);
 		btnNewButton_3.setVisible(false);
-		btnNewButton_3.setForeground(Color.BLACK);
+		btnNewButton_3.setForeground(Color.GRAY);
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton_3.setBackground(Color.BLACK);
-				btnNewButton_3.setForeground(Color.WHITE);
+				btnNewButton_3.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton_3.setBackground(Color.WHITE);
-				btnNewButton_3.setForeground(Color.BLACK);
+				btnNewButton_3.setForeground(Color.GRAY);
 				
 			}
 		});
@@ -736,24 +677,22 @@ public class Client {
 		
 		/** Inici del botó "Iniciar Projecte" */
 		button.setToolTipText("Inicia la Comanda Seleccionada");
-		
+		button.setOpaque(false);
 		button.setVisible(false);
-		button.setForeground(Color.BLACK);
+		button.setForeground(Color.GRAY);
 		button.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button.setBackground(Color.BLACK);
-				button.setForeground(Color.WHITE);
+				button.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button.setBackground(Color.WHITE);
-				button.setForeground(Color.BLACK);
+				button.setForeground(Color.GRAY);
 				
 			}
 			
@@ -796,24 +735,22 @@ public class Client {
 		
 		/** Inici del botó "Finalitzar Projecte" */
 		button2.setToolTipText("Finalitzar la Comanda Seleccionada");
-		
+		button2.setOpaque(false);
 		button2.setVisible(false);
-		button2.setForeground(Color.BLACK);
+		button2.setForeground(Color.GRAY);
 		button2.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button2.setBackground(Color.BLACK);
-				button2.setForeground(Color.WHITE);
+				button2.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button2.setBackground(Color.WHITE);
-				button2.setForeground(Color.BLACK);
+				button2.setForeground(Color.GRAY);
 				
 			}
 			
@@ -868,7 +805,7 @@ public class Client {
 		}
 		
 		textField.setSelectionColor(Color.GRAY);
-		textField.setForeground(Color.WHITE);
+		textField.setForeground(Color.LIGHT_GRAY);
 		textField.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
 		textField.setFocusable(false);
 		textField.setFocusTraversalKeysEnabled(false);
@@ -885,14 +822,13 @@ public class Client {
 		/** Inici del conjun de codi que composa als botons de la part de dalt */
 		/** Inici codi botó "Filtrar Comanda" */
 		button_5.setToolTipText("Accedeix a la pantalla de Filtres");
-		
-		button_5.setForeground(Color.BLACK);
+		button_5.setOpaque(false);
+		button_5.setForeground(Color.GRAY);
 		button_5.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_5.setBackground(Color.BLACK);
 				button_5.setForeground(Color.WHITE);
 				
 			}
@@ -900,8 +836,7 @@ public class Client {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_5.setBackground(Color.WHITE);
-				button_5.setForeground(Color.BLACK);
+				button_5.setForeground(Color.GRAY);
 				
 			}
 			
@@ -941,16 +876,17 @@ public class Client {
 
 		
 		/** Inici codi boto "Veure Descripció" */
+		button_6.setBackground(Color.WHITE);
+		button_6.setOpaque(false);
 		button_6.setToolTipText("Veure la Descripci\u00F3 de la Comanda Seleccionada");
 		
 		button_6.setFocusPainted(false);
-		button_6.setForeground(Color.BLACK);
+		button_6.setForeground(Color.GRAY);
 		button_6.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_6.setBackground(Color.BLACK);
 				button_6.setForeground(Color.WHITE);
 				
 			}
@@ -958,8 +894,7 @@ public class Client {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_6.setBackground(Color.WHITE);
-				button_6.setForeground(Color.BLACK);
+				button_6.setForeground(Color.GRAY);
 				
 			}
 			
@@ -990,33 +925,31 @@ public class Client {
 		});
 		
 		button_6.setVisible(false);
-		button_6.setForeground(Color.BLACK);
 		button_6.setFont(new Font("HelveticaNeue", Font.BOLD, 15));
 		button_6.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		button_6.setBackground(Color.WHITE);
 		button_6.setBounds(0, 344, 210, 51);
 		frame.getContentPane().add(button_6);
 		
+		
 		JButton btnNewButton = new JButton("AFEGIR COMANDA");
+		btnNewButton.setOpaque(false);
 		btnNewButton.setToolTipText("Crear una Comanda Nova");
 		btnNewButton.setBounds(935, 176, 210, 51);
 		frame.getContentPane().add(btnNewButton);
-		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setForeground(Color.GRAY);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton.setBackground(Color.BLACK);
-				btnNewButton.setForeground(Color.WHITE);
+				btnNewButton.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton.setBackground(Color.WHITE);
-				btnNewButton.setForeground(Color.BLACK);
+				btnNewButton.setForeground(Color.GRAY);
 				
 			}
 			
@@ -1029,25 +962,24 @@ public class Client {
 		btnNewButton.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
 		
 		JButton btnConsultarInformaciDe = new JButton("INFO CLIENT");
+		btnConsultarInformaciDe.setOpaque(false);
 		btnConsultarInformaciDe.setToolTipText("Veure la informaci\u00F3 del Client");
 		btnConsultarInformaciDe.setBounds(935, 226, 210, 51);
 		frame.getContentPane().add(btnConsultarInformaciDe);
-		btnConsultarInformaciDe.setForeground(Color.BLACK);
+		btnConsultarInformaciDe.setForeground(Color.GRAY);
 		btnConsultarInformaciDe.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnConsultarInformaciDe.setBackground(Color.BLACK);
-				btnConsultarInformaciDe.setForeground(Color.WHITE);
+				btnConsultarInformaciDe.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnConsultarInformaciDe.setBackground(Color.WHITE);
-				btnConsultarInformaciDe.setForeground(Color.BLACK);
+				btnConsultarInformaciDe.setForeground(Color.GRAY);
 				
 			}
 			
@@ -1060,25 +992,24 @@ public class Client {
 		btnConsultarInformaciDe.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
 		
 		JButton button_2 = new JButton("GENERAR FACTURA");
+		button_2.setOpaque(false);
 		button_2.setToolTipText("Accedeix a la Pantalla de Creaci\u00F3 de Factura");
 		button_2.setBounds(935, 326, 210, 51);
 		frame.getContentPane().add(button_2);
-		button_2.setForeground(Color.BLACK);
+		button_2.setForeground(Color.GRAY);
 		button_2.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_2.setBackground(Color.BLACK);
-				button_2.setForeground(Color.WHITE);
+				button_2.setForeground(Color.BLACK);
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_2.setBackground(Color.WHITE);
-				button_2.setForeground(Color.BLACK);
+				button_2.setForeground(Color.GRAY);
 				
 			}
 			
@@ -1090,162 +1021,160 @@ public class Client {
 		button_2.setBackground(Color.WHITE);
 		button_2.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
 		
-				JButton button_3 = new JButton("TORNAR ENRERE");
-				button_3.setToolTipText("Tornar al Inici");
-				button_3.setBounds(935, 376, 210, 51);
-				frame.getContentPane().add(button_3);
+		JButton button_3 = new JButton("TORNAR ENRERE");
+		button_3.setOpaque(false);
+		button_3.setToolTipText("Tornar al Inici");
+		button_3.setBounds(935, 376, 210, 51);
+		frame.getContentPane().add(button_3);
+		button_3.setForeground(Color.GRAY);
+		button_3.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				
 				button_3.setForeground(Color.BLACK);
-				button_3.addMouseListener(new MouseAdapter() {
-					
-					@Override
-					public void mouseEntered(MouseEvent e) {
-						
-						button_3.setBackground(Color.BLACK);
-						button_3.setForeground(Color.WHITE);
-						
-					}
-					
-					@Override
-					public void mouseExited(MouseEvent e) {
-						
-						button_3.setBackground(Color.WHITE);
-						button_3.setForeground(Color.BLACK);
-						
-					}
-					
-				});
 				
-				button_3.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-				button_3.setFocusPainted(false);
-				button_3.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-				button_3.setBackground(Color.WHITE);
-				button_3.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
 				
-				JButton button_1 = new JButton("MODIFICAR CLIENT");
-				button_1.setToolTipText("Modificar Informaci\u00F3 del Client");
-				button_1.setBounds(935, 276, 210, 51);
-				frame.getContentPane().add(button_1);
+				button_3.setForeground(Color.GRAY);
+				
+			}
+			
+		});
+		
+		button_3.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
+		button_3.setFocusPainted(false);
+		button_3.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		button_3.setBackground(Color.WHITE);
+		button_3.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
+		
+		JButton button_1 = new JButton("MODIFICAR CLIENT");
+		button_1.setOpaque(false);
+		button_1.setToolTipText("Modificar Informaci\u00F3 del Client");
+		button_1.setBounds(935, 276, 210, 51);
+		frame.getContentPane().add(button_1);
+		button_1.setForeground(Color.GRAY);
+		button_1.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				
 				button_1.setForeground(Color.BLACK);
-				button_1.addMouseListener(new MouseAdapter() {
-					
-					@Override
-					public void mouseEntered(MouseEvent e) {
-						
-						button_1.setBackground(Color.BLACK);
-						button_1.setForeground(Color.WHITE);
-						
-					}
-					
-					@Override
-					public void mouseExited(MouseEvent e) {
-						
-						button_1.setBackground(Color.WHITE);
-						button_1.setForeground(Color.BLACK);
-						
-					}
-					
-				});
 				
-				button_1.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-				button_1.setFocusPainted(false);
-				button_1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-				button_1.setBackground(Color.WHITE);
-				button_1.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
 				
-				textField_1 = new JTextField();
-				textField_1.setText("");
-				textField_1.setSelectionColor(Color.GRAY);
-				textField_1.setForeground(Color.BLACK);
-				textField_1.setFont(new Font("HelveticaNeue", Font.PLAIN, 14));
-				textField_1.setFocusable(false);
-				textField_1.setFocusTraversalKeysEnabled(false);
-				textField_1.setEditable(false);
-				textField_1.setColumns(10);
-				textField_1.setBorder(null);
-				textField_1.setBackground(Color.WHITE);
-				textField_1.setAutoscrolls(false);
-				textField_1.setBounds(0, 83, 210, 356);
-				frame.getContentPane().add(textField_1);
+				button_1.setForeground(Color.GRAY);
 				
-				frame.getContentPane().add(txtHola);
+			}
+			
+		});
+		
+		button_1.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
+		button_1.setFocusPainted(false);
+		button_1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		button_1.setBackground(Color.WHITE);
+		button_1.setFont(new Font("HelveticaNeue", Font.BOLD, 13));
+		
+		textField_1 = new JTextField();
+		textField_1.setText("");
+		textField_1.setSelectionColor(Color.GRAY);
+		textField_1.setForeground(Color.BLACK);
+		textField_1.setFont(new Font("HelveticaNeue", Font.PLAIN, 14));
+		textField_1.setFocusable(false);
+		textField_1.setFocusTraversalKeysEnabled(false);
+		textField_1.setEditable(false);
+		textField_1.setColumns(10);
+		textField_1.setBorder(null);
+		textField_1.setBackground(Color.WHITE);
+		textField_1.setAutoscrolls(false);
+		textField_1.setBounds(0, 83, 210, 356);
+		frame.getContentPane().add(textField_1);
+		
+		frame.getContentPane().add(txtHola);
+		
+		txtOpcionsDe = new JTextField();
+		txtOpcionsDe.setHorizontalAlignment(SwingConstants.CENTER);
+		txtOpcionsDe.setText("Opcions De\r\n");
+		txtOpcionsDe.setSelectionColor(Color.GRAY);
+		txtOpcionsDe.setForeground(Color.BLACK);
+		txtOpcionsDe.setFont(new Font("HelveticaNeue", Font.PLAIN, 21));
+		txtOpcionsDe.setFocusable(false);
+		txtOpcionsDe.setFocusTraversalKeysEnabled(false);
+		txtOpcionsDe.setEditable(false);
+		txtOpcionsDe.setColumns(10);
+		txtOpcionsDe.setBorder(null);
+		txtOpcionsDe.setBackground(Color.WHITE);
+		txtOpcionsDe.setAutoscrolls(false);
+		txtOpcionsDe.setBounds(950, 93, 195, 37);
+		frame.getContentPane().add(txtOpcionsDe);
+		textField_3.setText("");
+		textField_3.setSelectionColor(Color.GRAY);
+		textField_3.setForeground(Color.BLACK);
+		textField_3.setFont(new Font("HelveticaNeue", Font.PLAIN, 14));
+		textField_3.setFocusable(false);
+		textField_3.setFocusTraversalKeysEnabled(false);
+		textField_3.setEditable(false);
+		textField_3.setColumns(10);
+		textField_3.setBorder(null);
+		textField_3.setBackground(Color.WHITE);
+		textField_3.setAutoscrolls(false);
+		textField_3.setBounds(935, 83, 210, 356);
+		
+		frame.getContentPane().add(textField_3);
+		
+		frame.getContentPane().add(txtClient);
+		lblNewLabel_1.setIcon(new ImageIcon(Client.class.getResource("/VISTA/img/backg.png")));
+		lblNewLabel_1.setBounds(152, 0, 775, 439);
+		
+		frame.getContentPane().add(lblNewLabel_1);
+		button_1.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
 				
-				txtOpcionsDe = new JTextField();
-				txtOpcionsDe.setHorizontalAlignment(SwingConstants.CENTER);
-				txtOpcionsDe.setText("Opcions De\r\n");
-				txtOpcionsDe.setSelectionColor(Color.GRAY);
-				txtOpcionsDe.setForeground(Color.BLACK);
-				txtOpcionsDe.setFont(new Font("HelveticaNeue", Font.PLAIN, 21));
-				txtOpcionsDe.setFocusable(false);
-				txtOpcionsDe.setFocusTraversalKeysEnabled(false);
-				txtOpcionsDe.setEditable(false);
-				txtOpcionsDe.setColumns(10);
-				txtOpcionsDe.setBorder(null);
-				txtOpcionsDe.setBackground(Color.WHITE);
-				txtOpcionsDe.setAutoscrolls(false);
-				txtOpcionsDe.setBounds(950, 93, 195, 37);
-				frame.getContentPane().add(txtOpcionsDe);
-				textField_3.setText("");
-				textField_3.setSelectionColor(Color.GRAY);
-				textField_3.setForeground(Color.BLACK);
-				textField_3.setFont(new Font("HelveticaNeue", Font.PLAIN, 14));
-				textField_3.setFocusable(false);
-				textField_3.setFocusTraversalKeysEnabled(false);
-				textField_3.setEditable(false);
-				textField_3.setColumns(10);
-				textField_3.setBorder(null);
-				textField_3.setBackground(Color.WHITE);
-				textField_3.setAutoscrolls(false);
-				textField_3.setBounds(935, 83, 210, 356);
-				
-				frame.getContentPane().add(textField_3);
-				
-				frame.getContentPane().add(txtClient);
-				lblNewLabel_1.setIcon(new ImageIcon(Client.class.getResource("/VISTA/img/backg.png")));
-				lblNewLabel_1.setBounds(152, 0, 775, 439);
-				
-				frame.getContentPane().add(lblNewLabel_1);
-				button_1.addActionListener(new ActionListener() {
+				try {
 					
-					public void actionPerformed(ActionEvent e) {
-						
-						try {
-							
-							/** En clicar aquest botó, s'obrirà la pantalla "ModificarClient" */
-							
-							ModificarClient frm = new ModificarClient(idEmpresa);
-							frm.frame.setVisible(true);
-							frame.setVisible(false);
-							
-						} catch (SQLException e1) {
-							
-							e1.printStackTrace();
-							
-						}
-						
-					}
+					/** En clicar aquest botó, s'obrirà la pantalla "ModificarClient" */
 					
-				});
-				button_3.addActionListener(new ActionListener() {
+					ModificarClient frm = new ModificarClient(idEmpresa);
+					frm.frame.setVisible(true);
+					frame.setVisible(false);
 					
-					public void actionPerformed(ActionEvent e) {
-						
-						try {
-							
-							/** En clicar el botó, tornarem a la pantalla principal */
-							
-							Principal frm = new Principal();
-							frm.frame.setVisible(true); 
-							frame.setVisible(false); 
-							
-						} catch (ClassNotFoundException | SQLException e1) {
-							
-							e1.printStackTrace();
-							
-						}
-						
-					}
+				} catch (SQLException e1) {
 					
-				});
+					e1.printStackTrace();
+					
+				}
+				
+			}
+			
+		});
+		button_3.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					
+					/** En clicar el botó, tornarem a la pantalla principal */
+					
+					Principal frm = new Principal();
+					frm.frame.setVisible(true); 
+					frame.setVisible(false); 
+					
+				} catch (ClassNotFoundException | SQLException e1) {
+					
+					e1.printStackTrace();
+					
+				}
+				
+			}
+			
+		});
 				
 		button_2.addActionListener(new ActionListener() {
 			

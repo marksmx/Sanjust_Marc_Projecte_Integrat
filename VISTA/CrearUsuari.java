@@ -125,7 +125,7 @@ public class CrearUsuari {
 		
 		JTextPane txtpnNom = new JTextPane();
 		txtpnNom.setText("NOM");
-		txtpnNom.setForeground(Color.WHITE);
+		txtpnNom.setForeground(Color.LIGHT_GRAY);
 		txtpnNom.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnNom.setFocusable(false);
 		txtpnNom.setFocusTraversalKeysEnabled(false);
@@ -148,7 +148,7 @@ public class CrearUsuari {
 		
 		JTextPane txtpnCognom = new JTextPane();
 		txtpnCognom.setText("COGNOM");
-		txtpnCognom.setForeground(Color.WHITE);
+		txtpnCognom.setForeground(Color.LIGHT_GRAY);
 		txtpnCognom.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnCognom.setFocusable(false);
 		txtpnCognom.setFocusTraversalKeysEnabled(false);
@@ -161,7 +161,7 @@ public class CrearUsuari {
 		JTextPane textPane_4 = new JTextPane();
 		textPane_4.setOpaque(false);
 		textPane_4.setText("DNI");
-		textPane_4.setForeground(Color.WHITE);
+		textPane_4.setForeground(Color.LIGHT_GRAY);
 		textPane_4.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		textPane_4.setFocusable(false);
 		textPane_4.setFocusTraversalKeysEnabled(false);
@@ -223,7 +223,7 @@ public class CrearUsuari {
 		
 		JTextPane txtpnContrasenya = new JTextPane();
 		txtpnContrasenya.setText("CONTRASENYA");
-		txtpnContrasenya.setForeground(Color.WHITE);
+		txtpnContrasenya.setForeground(Color.LIGHT_GRAY);
 		txtpnContrasenya.setFont(new Font("HelveticaNeue", Font.PLAIN, 20));
 		txtpnContrasenya.setFocusable(false);
 		txtpnContrasenya.setFocusTraversalKeysEnabled(false);
@@ -246,7 +246,7 @@ public class CrearUsuari {
 		
 		JTextPane txtpnMail = new JTextPane();
 		txtpnMail.setText("MAIL");
-		txtpnMail.setForeground(Color.WHITE);
+		txtpnMail.setForeground(Color.LIGHT_GRAY);
 		txtpnMail.setFont(new Font("HelveticaNeue", Font.PLAIN, 22));
 		txtpnMail.setFocusable(false);
 		txtpnMail.setFocusTraversalKeysEnabled(false);
@@ -258,14 +258,15 @@ public class CrearUsuari {
 
 		
 		/** Inici codi botó "Acabar i Continuar" */
+		button.setBackground(Color.WHITE);
 		
-		button.setForeground(Color.BLACK);
+		button.setForeground(Color.GRAY);
+		button.setOpaque(false);
 		button.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button.setBackground(Color.BLACK);
 				button.setForeground(Color.WHITE);
 				
 			}
@@ -273,8 +274,7 @@ public class CrearUsuari {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button.setBackground(Color.WHITE);
-				button.setForeground(Color.BLACK);
+				button.setForeground(Color.GRAY);
 				
 			}
 			
@@ -283,7 +283,6 @@ public class CrearUsuari {
 		button.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		button.setFocusPainted(false);
 		button.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		button.setBackground(Color.WHITE);
 		button.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		button.addActionListener(new ActionListener() {
 			
@@ -326,9 +325,9 @@ public class CrearUsuari {
 		button.setBounds(153, 372, 174, 35);
 		frame.getContentPane().add(button);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(CrearUsuari.class.getResource("/VISTA/img/backg.png")));
-		lblNewLabel_1.setBounds(0, 0, 467, 432);
+		lblNewLabel_1.setBounds(0, 32, 493, 400);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		/** Fi codi botó "Acabar i Continuar" */

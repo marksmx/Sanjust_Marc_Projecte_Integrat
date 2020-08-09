@@ -149,7 +149,7 @@ public class LogIn {
 		txtpnIdentificat.setBorder(null);
 		txtpnIdentificat.setHorizontalAlignment(SwingConstants.CENTER);
 		txtpnIdentificat.setText("IDENTIFICA'T");
-		txtpnIdentificat.setForeground(Color.WHITE);
+		txtpnIdentificat.setForeground(Color.LIGHT_GRAY);
 		txtpnIdentificat.setFont(new Font("HelveticaNeue", Font.PLAIN, 16));
 		txtpnIdentificat.setFocusable(false);
 		txtpnIdentificat.setFocusTraversalKeysEnabled(false);
@@ -196,7 +196,7 @@ public class LogIn {
 		txtpnUsuari = new JTextPane();
 		txtpnUsuari.setOpaque(false);
 		txtpnUsuari.setBackground(Color.BLACK);
-		txtpnUsuari.setForeground(Color.WHITE);
+		txtpnUsuari.setForeground(Color.LIGHT_GRAY);
 		txtpnUsuari.setFocusable(false);
 		txtpnUsuari.setFocusTraversalKeysEnabled(false);
 		txtpnUsuari.setFocusCycleRoot(false);
@@ -217,7 +217,7 @@ public class LogIn {
 		txtpnContrasenya.setBorder(null);
 		txtpnContrasenya.setHorizontalAlignment(SwingConstants.CENTER);
 		txtpnContrasenya.setBackground(Color.BLACK);
-		txtpnContrasenya.setForeground(Color.WHITE);
+		txtpnContrasenya.setForeground(Color.LIGHT_GRAY);
 		txtpnContrasenya.setText("CONTRASENYA");
 		txtpnContrasenya.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
 		txtpnContrasenya.setFocusable(false);
@@ -306,17 +306,14 @@ public class LogIn {
 		txtTest.setEditable(false);
 		txtTest.setBorder(null);
 		txtTest.setBackground(Color.BLACK);
+		btnEntrar.setOpaque(false);
 		
-		
-		/** Inici codi botó "Entratr" */
-		
-		btnEntrar.setForeground(Color.BLACK);
+		btnEntrar.setForeground(Color.GRAY);
 		btnEntrar.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnEntrar.setBackground(Color.BLACK);
 				btnEntrar.setForeground(Color.WHITE);
 				
 			}
@@ -324,8 +321,7 @@ public class LogIn {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnEntrar.setBackground(Color.WHITE);
-				btnEntrar.setForeground(Color.BLACK);
+				btnEntrar.setForeground(Color.GRAY);
 				
 			}
 			
@@ -376,7 +372,7 @@ public class LogIn {
 		btnEntrar.setBounds(169, 220, 117, 29);
 		frame.getContentPane().add(btnEntrar);
 		lblNewLabel_1.setIcon(new ImageIcon(LogIn.class.getResource("/VISTA/img/backg.png")));
-		lblNewLabel_1.setBounds(0, 81, 348, 237);
+		lblNewLabel_1.setBounds(-14, 81, 480, 237);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 	}

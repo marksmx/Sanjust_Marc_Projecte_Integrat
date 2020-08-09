@@ -696,13 +696,13 @@ public class FiltreComandes {
 		/** Inici del conjunt d'elements que composen la capçalera */
 		
 		JButton btnAplicarFiltre = new JButton("APLICAR FILTRE");
-		btnAplicarFiltre.setForeground(Color.BLACK);
+		btnAplicarFiltre.setOpaque(false);
+		btnAplicarFiltre.setForeground(Color.GRAY);
 		btnAplicarFiltre.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnAplicarFiltre.setBackground(Color.BLACK);
 				btnAplicarFiltre.setForeground(Color.WHITE);
 				
 			}
@@ -710,8 +710,7 @@ public class FiltreComandes {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnAplicarFiltre.setBackground(Color.WHITE);
-				btnAplicarFiltre.setForeground(Color.BLACK);
+				btnAplicarFiltre.setForeground(Color.GRAY);
 				
 			}
 			
@@ -775,7 +774,7 @@ public class FiltreComandes {
 		txtFiltrarPerPagament.setText("FILTRAR PER PAGAMENT");
 		txtFiltrarPerPagament.setSelectionColor(Color.GRAY);
 		txtFiltrarPerPagament.setHorizontalAlignment(SwingConstants.CENTER);
-		txtFiltrarPerPagament.setForeground(Color.WHITE);
+		txtFiltrarPerPagament.setForeground(Color.LIGHT_GRAY);
 		txtFiltrarPerPagament.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
 		txtFiltrarPerPagament.setFocusable(false);
 		txtFiltrarPerPagament.setFocusTraversalKeysEnabled(false);
@@ -790,7 +789,7 @@ public class FiltreComandes {
 		txtFiltrarPerEstat.setText("FILTRAR PER ESTAT");
 		txtFiltrarPerEstat.setSelectionColor(Color.GRAY);
 		txtFiltrarPerEstat.setHorizontalAlignment(SwingConstants.CENTER);
-		txtFiltrarPerEstat.setForeground(Color.WHITE);
+		txtFiltrarPerEstat.setForeground(Color.LIGHT_GRAY);
 		txtFiltrarPerEstat.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
 		txtFiltrarPerEstat.setFocusable(false);
 		txtFiltrarPerEstat.setFocusTraversalKeysEnabled(false);
@@ -807,7 +806,7 @@ public class FiltreComandes {
 		txtFiltrarPerMes.setText("FILTRAR PER MES");
 		txtFiltrarPerMes.setSelectionColor(Color.GRAY);
 		txtFiltrarPerMes.setHorizontalAlignment(SwingConstants.CENTER);
-		txtFiltrarPerMes.setForeground(Color.WHITE);
+		txtFiltrarPerMes.setForeground(Color.LIGHT_GRAY);
 		txtFiltrarPerMes.setFont(new Font("HelveticaNeue", Font.PLAIN, 15));
 		txtFiltrarPerMes.setFocusable(false);
 		txtFiltrarPerMes.setFocusTraversalKeysEnabled(false);
@@ -818,12 +817,12 @@ public class FiltreComandes {
 		txtFiltrarPerMes.setAutoscrolls(false);
 		txtFiltrarPerMes.setBounds(80, 93, 146, 31);
 		frame.getContentPane().add(txtFiltrarPerMes);
-		btnAplicarFiltre.setForeground(Color.BLACK);
+		
 		btnAplicarFiltre.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		btnAplicarFiltre.setFocusPainted(false);
 		btnAplicarFiltre.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		btnAplicarFiltre.setBackground(Color.WHITE);
-		btnAplicarFiltre.setBounds(295, 184, 146, 42);
+		btnAplicarFiltre.setBounds(295, 195, 146, 31);
 		frame.getContentPane().add(btnAplicarFiltre);
 		
 		JPanel panel = new JPanel();
@@ -883,6 +882,8 @@ public class FiltreComandes {
 
 		
 		/** Inici conjunt de codi que composa els comboBox */
+		comboBox.setBackground(Color.BLACK);
+		comboBox.setForeground(Color.GRAY);
 		comboBox.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
 		comboBox.setBounds(80, 130, 146, 30);
@@ -941,13 +942,13 @@ public class FiltreComandes {
 		
 		/** Inici botó "Tornar al Inici" */
 
-		button_3.setForeground(Color.BLACK);
+		button_3.setForeground(Color.GRAY);
+		button_3.setOpaque(false);
 		button_3.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				button_3.setBackground(Color.BLACK);
 				button_3.setForeground(Color.WHITE);
 				
 			}
@@ -955,8 +956,7 @@ public class FiltreComandes {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				button_3.setBackground(Color.WHITE);
-				button_3.setForeground(Color.BLACK);
+				button_3.setForeground(Color.GRAY);
 				
 			}
 			
@@ -982,7 +982,6 @@ public class FiltreComandes {
 			
 		});
 		
-		button_3.setForeground(Color.BLACK);
 		button_3.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		button_3.setFocusPainted(false);
 		button_3.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
@@ -992,7 +991,7 @@ public class FiltreComandes {
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon(FiltreComandes.class.getResource("/VISTA/img/backg.png")));
-		lblNewLabel_1.setBounds(0, 41, 737, 467);
+		lblNewLabel_1.setBounds(106, 101, 621, 280);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		/** Fi botó "Tornar al Inici" */

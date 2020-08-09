@@ -207,14 +207,13 @@ public class Principal {
 		
         
 		JButton btnModificarContrasenya = new JButton("MODIFICAR PERFIL");
-
-        btnModificarContrasenya.setForeground(Color.BLACK);
+		btnModificarContrasenya.setOpaque(false);
+        btnModificarContrasenya.setForeground(Color.GRAY);
         btnModificarContrasenya.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnModificarContrasenya.setBackground(Color.BLACK);
 				btnModificarContrasenya.setForeground(Color.WHITE);
 				
 			}
@@ -222,8 +221,7 @@ public class Principal {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnModificarContrasenya.setBackground(Color.WHITE);
-				btnModificarContrasenya.setForeground(Color.BLACK);
+				btnModificarContrasenya.setForeground(Color.GRAY);
 				
 			}
 			
@@ -335,7 +333,6 @@ public class Principal {
 		btnConsultarComandesPendents.setBackground(Color.WHITE);
 		btnConsultarComandesPendents.setBounds(80, 297, 45, 44);
 		frame.getContentPane().add(btnConsultarComandesPendents);
-		btnModificarContrasenya.setForeground(Color.BLACK);
 		btnModificarContrasenya.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		btnModificarContrasenya.setFocusPainted(false);
 		btnModificarContrasenya.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
@@ -346,7 +343,7 @@ public class Principal {
 		JTextPane txtpnGrficDeProjectes = new JTextPane();
 		txtpnGrficDeProjectes.setText("GR\u00C0FIC DE PROJECTES");
 		txtpnGrficDeProjectes.setOpaque(false);
-		txtpnGrficDeProjectes.setForeground(Color.WHITE);
+		txtpnGrficDeProjectes.setForeground(Color.LIGHT_GRAY);
 		txtpnGrficDeProjectes.setFont(new Font("HelveticaNeue", Font.PLAIN, 16));
 		txtpnGrficDeProjectes.setFocusable(false);
 		txtpnGrficDeProjectes.setFocusTraversalKeysEnabled(false);
@@ -405,7 +402,7 @@ public class Principal {
 		JTextPane textPane = new JTextPane();
 		textPane.setOpaque(false);
 		textPane.setText("FINALITZATS");
-		textPane.setForeground(Color.WHITE);
+		textPane.setForeground(Color.LIGHT_GRAY);
 		textPane.setFont(new Font("HelveticaNeue", Font.PLAIN, 16));
 		textPane.setFocusable(false);
 		textPane.setFocusTraversalKeysEnabled(false);
@@ -418,7 +415,7 @@ public class Principal {
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setOpaque(false);
 		textPane_1.setText("EN PROCÉS");
-		textPane_1.setForeground(Color.WHITE);
+		textPane_1.setForeground(Color.LIGHT_GRAY);
 		textPane_1.setFont(new Font("HelveticaNeue", Font.PLAIN, 16));
 		textPane_1.setFocusable(false);
 		textPane_1.setFocusTraversalKeysEnabled(false);
@@ -431,7 +428,7 @@ public class Principal {
 		JTextPane textPane_2 = new JTextPane();
 		textPane_2.setOpaque(false);
 		textPane_2.setText("PENDENTS");
-		textPane_2.setForeground(Color.WHITE);
+		textPane_2.setForeground(Color.LIGHT_GRAY);
 		textPane_2.setFont(new Font("HelveticaNeue", Font.PLAIN, 16));
 		textPane_2.setFocusable(false);
 		textPane_2.setFocusTraversalKeysEnabled(false);
@@ -445,14 +442,13 @@ public class Principal {
 		/** Inici conjunt codi que composa els botons */
 		/** Inici codi botó "Consultar Client" */
 		btnNewButton.setToolTipText("Accedeix a la pantalla de gesti\u00F3 d'informaci\u00F3 i comandes del client seleccionat");
-		
-		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setOpaque(false);
+		btnNewButton.setForeground(Color.GRAY);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnNewButton.setBackground(Color.BLACK);
 				btnNewButton.setForeground(Color.WHITE);
 				
 			}
@@ -460,8 +456,7 @@ public class Principal {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnNewButton.setBackground(Color.WHITE);
-				btnNewButton.setForeground(Color.BLACK);
+				btnNewButton.setForeground(Color.GRAY);
 				
 			}
 			
@@ -506,14 +501,13 @@ public class Principal {
 		
 		/** Inici codi botó "Afegir Client" */
 		btnAfegirClient.setToolTipText("Crear un nou client");
-
-		btnAfegirClient.setForeground(Color.BLACK);
+		btnAfegirClient.setOpaque(false);
+		btnAfegirClient.setForeground(Color.GRAY);
 		btnAfegirClient.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnAfegirClient.setBackground(Color.BLACK);
 				btnAfegirClient.setForeground(Color.WHITE);
 				
 			}
@@ -521,8 +515,7 @@ public class Principal {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnAfegirClient.setBackground(Color.WHITE);
-				btnAfegirClient.setForeground(Color.BLACK);
+				btnAfegirClient.setForeground(Color.GRAY);
 				
 			}
 			
@@ -560,13 +553,14 @@ public class Principal {
 
 		
 		/** Inici codi botó "Afegir Producte/Servei" */
-
+		btnAfegirProducteservei.setOpaque(false);
+		btnAfegirProducteservei.setForeground(Color.GRAY);
+		
 		btnAfegirProducteservei.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnAfegirProducteservei.setBackground(Color.BLACK);
 				btnAfegirProducteservei.setForeground(Color.WHITE);
 				
 			}
@@ -574,8 +568,7 @@ public class Principal {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnAfegirProducteservei.setBackground(Color.WHITE);
-				btnAfegirProducteservei.setForeground(Color.BLACK);
+				btnAfegirProducteservei.setForeground(Color.GRAY);
 				
 			}
 			
@@ -661,14 +654,13 @@ public class Principal {
 		
 		/** Inici codi botó "Eines d'Admin" */
 		btnEinesDadmin.setToolTipText("Elimina el client seleccionat");
-		
-		btnEinesDadmin.setForeground(Color.BLACK);
+		btnEinesDadmin.setOpaque(false);
+		btnEinesDadmin.setForeground(Color.GRAY);
 		btnEinesDadmin.addMouseListener(new MouseAdapter() {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				
-				btnEinesDadmin.setBackground(Color.BLACK);
 				btnEinesDadmin.setForeground(Color.WHITE);
 				
 			}
@@ -676,8 +668,7 @@ public class Principal {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				
-				btnEinesDadmin.setBackground(Color.WHITE);
-				btnEinesDadmin.setForeground(Color.BLACK);
+				btnEinesDadmin.setForeground(Color.GRAY);
 				
 			}
 			
@@ -703,7 +694,6 @@ public class Principal {
 			
 		});
 		
-		btnEinesDadmin.setForeground(Color.BLACK);
 		btnEinesDadmin.setFont(new Font("HelveticaNeue", Font.BOLD, 12));
 		btnEinesDadmin.setFocusPainted(false);
 		btnEinesDadmin.setBorder(new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
